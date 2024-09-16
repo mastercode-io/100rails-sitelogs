@@ -216,7 +216,14 @@ db_schema:
     - {admin_ui: null, name: service_name, type: string}
     - {admin_ui: null, name: updated_time, type: datetime}
     - {admin_ui: null, name: created_time, type: datetime}
-    - {admin_ui: null, name: connection_type, type: string}
+    - admin_ui: {width: 120}
+      name: service_type
+      type: string
+    - admin_ui: {width: 200}
+      name: direction
+      type: string
+    - {admin_ui: null, name: auth_type, type: string}
+    - {admin_ui: null, name: auth_data, type: simpleObject}
     server: full
     title: App Integrations
   app_out_api_credentials:
@@ -468,6 +475,7 @@ db_schema:
     - admin_ui: {width: 200}
       name: count_overtime
       type: bool
+    - {admin_ui: null, name: tags, target: tags, type: link_multiple}
     server: full
     title: Pay Rate Rules
   pay_rate_template_items:
@@ -734,6 +742,7 @@ db_schema:
     - admin_ui: {width: 200}
       name: pay_lines
       type: simpleObject
+    - {admin_ui: null, name: tags, target: tags, type: link_multiple}
     server: full
     title: Timesheets
   uploads:
@@ -845,8 +854,8 @@ dependencies:
 - dep_id: dep_axwoskh2kbe14m
   resolution_hints: {app_id: RKPNSNWS3GPPJAO7, name: AnvilFusion, package_name: AnvilFusion}
   version: {branch: master}
-metadata: {description: Payroll Timesheet Pre-Processor, title: PayLogs}
-name: Clone of PayLogs
+metadata: {description: '', title: SiteLogs}
+name: SiteLogs
 native_deps:
   head_html: |
     <!-- Material Design icons -->
@@ -884,7 +893,7 @@ native_deps:
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-main.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2023.3.1114/styles/kendo.uniform.min.css" />
     <script src="https://kendo.cdn.telerik.com/2023.3.1114/js/kendo.all.min.js"></script>
-package_name: PayLogs
+package_name: SiteLogs
 runtime_options:
   client_version: '3'
   server_persist: true
@@ -895,22 +904,22 @@ scheduled_tasks: []
 secrets:
   api_request_password:
     type: secret
-    value: {BBEZAPHMPN72GFKM: KoXdvQ8zeJI1+UXkKHLYd7ZfvdEnKrtnux6jxqvheuUU2XH6IgYOs1zNdZyWC9nmKSHfsEzEDUTU3fjpHLJ0eA0wtKhlMNZTpE6IRlrWtbbJqV9LdMsLNaZm8d/UYTpt8MWdUyJ8+YY3ZIujv+zu}
+    value: {55JT5ZBUXSPCYFZQ: PwEuznq63s1urDCNj5F/W7bsHMGe6H4idsFmQHu0rC+S1JXC88igci3pi7398j1t7EneKRjudNdXe50eMMBE3Wu+oEmIgTfb/mV6/dz5lZDn18BUqecK85WlHExHxSIeX8ghhFFSKTdgp55wCWEi, BBEZAPHMPN72GFKM: KoXdvQ8zeJI1+UXkKHLYd7ZfvdEnKrtnux6jxqvheuUU2XH6IgYOs1zNdZyWC9nmKSHfsEzEDUTU3fjpHLJ0eA0wtKhlMNZTpE6IRlrWtbbJqV9LdMsLNaZm8d/UYTpt8MWdUyJ8+YY3ZIujv+zu}
   copilot_assistant_id:
     type: secret
-    value: {BBEZAPHMPN72GFKM: pV/dtqwEhKUOFJILQ2uTfqbiupy6ecYRnbDDUrpdN2u8T45NcedlaYA8aLRwTLNMHKd4EvziJ8vUD8ivDwhrbDY4z8ieYmJCCap46hxjwYnkR5T8HpYpNoilwc0tf+ml/dioR0Rs6sd+cul/WuWrOwl4jqO0UOPX8NWxAQ==}
+    value: {55JT5ZBUXSPCYFZQ: mAP7MHervEShsb3RhemDugcGHwUv3t8KkDl4nArnMOseiRN3r/XpHpqM6bKZPom42TaTQ2skQ1Ul7y/vuMls95s8CXjlxSUr61klJmgtHLRfie6gu3PZ3c7N5ZvY5WSgP5aBHcmJL9wsE8v8271UNvkpWBDPkKndXryzQg==, BBEZAPHMPN72GFKM: pV/dtqwEhKUOFJILQ2uTfqbiupy6ecYRnbDDUrpdN2u8T45NcedlaYA8aLRwTLNMHKd4EvziJ8vUD8ivDwhrbDY4z8ieYmJCCap46hxjwYnkR5T8HpYpNoilwc0tf+ml/dioR0Rs6sd+cul/WuWrOwl4jqO0UOPX8NWxAQ==}
   openai_api_key:
     type: secret
-    value: {BBEZAPHMPN72GFKM: /iuGGCO5Dkxf56NyoJ2MnIkrWX//+xivr7lfxBZDeZhdXNpTv8kins/p1UhV1IgtO9P/JsymM+IDJnC5Ba5T3N/yz8teg8h9CtM9m5riRJa19odEGsOT8OSJcdYvuJZjVAooXe/8giDJvdD1S4UOEPGIAMWGuR7F8tMOBBeWdPWAtnF0DZOsjuXBjUnkzjYu7c80aZv/KPyIAfjaHkce1x0F5zlYpnilQE684Uo57pQd4u9ufZZbD6IWp4LmGA==}
+    value: {55JT5ZBUXSPCYFZQ: COlSR3CQf/4zrHYPy22gmFNllwKdTF4vy6lWxD10e8Q0DAbZQUEzaQuzUEAH5N4CvZuSOJwRQetkpOztR8H3Yx+EB04P0CPWjMlaWd9mM+xvGA8Nj1NpLBYVTHRp/EDTgASXST16YeSQHY378xoIjD4eQlhoBjQcKeJYeCr+1Ns0MWX5M1TQHJbxPAFnGt09XsbSNYMPGS/izOd1Bb3khnr3dgSVoNVyUA5I6H9pvgIRdOsV2WeqlEcHBNNDUQ==, BBEZAPHMPN72GFKM: /iuGGCO5Dkxf56NyoJ2MnIkrWX//+xivr7lfxBZDeZhdXNpTv8kins/p1UhV1IgtO9P/JsymM+IDJnC5Ba5T3N/yz8teg8h9CtM9m5riRJa19odEGsOT8OSJcdYvuJZjVAooXe/8giDJvdD1S4UOEPGIAMWGuR7F8tMOBBeWdPWAtnF0DZOsjuXBjUnkzjYu7c80aZv/KPyIAfjaHkce1x0F5zlYpnilQE684Uo57pQd4u9ufZZbD6IWp4LmGA==}
   qb_auth_sandbox:
     type: secret
-    value: {BBEZAPHMPN72GFKM: RcVxQibZGV7PdZ0RT0UVd9Swi2xq5AqRz+iY5UAuRUSAqVoWo7CF7g/D+vqUzGa523i5IHPTJ9V30yPrfmI+wE9wAjgQYD+VjjcypAorcpJgVtxtCW5X5VV0RjRTgpsi7t4xhnvLmv2+6FyzrQv0ZaU9y+cxadfIpg+ZnbC5lVLEMLdUy34cdZKChBsA7MNinEi5Ks96dd5OjSR0qahC55HUGCP/9PVWFFQKGPrP9Ig/MU45RRUANmgKppHqpxyc6zhxs6/HMM1jjSsJIULqiH2gWkodtNOYr/1/0C8WOv8ff7uVrxm2}
+    value: {55JT5ZBUXSPCYFZQ: w7bpa7mCVHxKajHFQrhFMsFI1tkwH6piVI3PzTp7y2iCOWDkBJXR2v6N0AXER1ux+uq78Ei2bl/kGEOAQo6C41KVyRb87+Rx7RNxJpuokE2+PFpeZulBW2p1avmMxlQmI7VpLIbUSH16ocMPnGGun7muCClf51Te5/JlvSZCT+T9a5/CyeqiUzGiC3rQuiFzkqjvo11wl3l1RgFkBuCEAc0zRtQdxFNlylWrguoe+x2IjwWWbqLo/Z8bg06aa5ghrLD2nn22Qmx1GRoTobf4OgjaKoZQF/vS0SYj4OGLj9vRMy8UP8RP, BBEZAPHMPN72GFKM: RcVxQibZGV7PdZ0RT0UVd9Swi2xq5AqRz+iY5UAuRUSAqVoWo7CF7g/D+vqUzGa523i5IHPTJ9V30yPrfmI+wE9wAjgQYD+VjjcypAorcpJgVtxtCW5X5VV0RjRTgpsi7t4xhnvLmv2+6FyzrQv0ZaU9y+cxadfIpg+ZnbC5lVLEMLdUy34cdZKChBsA7MNinEi5Ks96dd5OjSR0qahC55HUGCP/9PVWFFQKGPrP9Ig/MU45RRUANmgKppHqpxyc6zhxs6/HMM1jjSsJIULqiH2gWkodtNOYr/1/0C8WOv8ff7uVrxm2}
   xero_auth:
     type: secret
-    value: {BBEZAPHMPN72GFKM: ysV0Iq5n6YNWU5g63LsPnOFDGa3UWJ0qDiLyTGAgeMt3zV4coLGljdKzD5z2KXqXQxK1g1PN6dfTR/2awAOotXk9B1yiXMtYbVQxyr47JQvy5jOWwqENcVXjvjrRe5iuT80p4WBAsL1ID/LxzO7YlUwQGvtdDAwnCex+zQbRUgWT2eZeQW5WeTgoyLD8rFFVL/R6ZIsMIe0niy98EuRQm+nWaHdxS6wK+LOmstI63M8LbD2BLQp0YI69PBLP2IYEKs+doWPDlCfmns7lrB7UAk/ih1ykxTKsZVtt064=}
+    value: {55JT5ZBUXSPCYFZQ: 4qD1VurEfSo5R4l+4P8nVxVSM9FGvR2DnWikwD2/IeW2er1PHE16RE9M4ahLfvbrC+c7RKjj+5L7MybASzmmWUVBuTPYIQG1Uc0YoBuuz9+g+ots511eaAxWcnaUyB3eDFvwcoN49JwGa8lHXlDIsDuF0gfg3WRsYru+Z4HZVicY7PZd26ixJbvqMhj0p6hvkWRGKAJd1NSvh8SOofnXy7n4tRjLvY58jIIZ9ucPz5lzO+NABic9xAVRxGMVoWgAmTX7sLYL56vZnwDtph5rSNumdlAcNsxzSiW41G8=, BBEZAPHMPN72GFKM: ysV0Iq5n6YNWU5g63LsPnOFDGa3UWJ0qDiLyTGAgeMt3zV4coLGljdKzD5z2KXqXQxK1g1PN6dfTR/2awAOotXk9B1yiXMtYbVQxyr47JQvy5jOWwqENcVXjvjrRe5iuT80p4WBAsL1ID/LxzO7YlUwQGvtdDAwnCex+zQbRUgWT2eZeQW5WeTgoyLD8rFFVL/R6ZIsMIe0niy98EuRQm+nWaHdxS6wK+LOmstI63M8LbD2BLQp0YI69PBLP2IYEKs+doWPDlCfmns7lrB7UAk/ih1ykxTKsZVtt064=}
 services:
 - client_config: {enable_v2: true}
-  server_config: {}
+  server_config: {auto_create_missing_columns: true}
   source: /runtime/services/tables.yml
 - client_config: {}
   server_config: {}
@@ -921,7 +930,7 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/stripe.yml
-- client_config: {allow_remember_me: true, allow_signup: true, confirm_email: true, enable_automatically: true, remember_me_days: 30, require_secure_passwords: true, use_email: true, use_facebook: true, use_google: true, use_token: true}
+- client_config: {allow_remember_me: true, allow_signup: false, confirm_email: false, enable_automatically: true, remember_me_days: 30, require_secure_passwords: true, use_email: true, use_facebook: true, use_google: true, use_token: true}
   server_config: {user_table: users}
   source: /runtime/services/anvil/users.yml
 - client_config: {}

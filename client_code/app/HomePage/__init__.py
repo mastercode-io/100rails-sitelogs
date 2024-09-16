@@ -190,27 +190,6 @@ class HomePage(HomePageTemplate):
         stime = time.time()
         AppEnv.assistant = self.assistant
 
-        # if (AppEnv.logged_user.permissions.super_admin
-        #         or AppEnv.logged_user.permissions.administrator
-        #         or AppEnv.logged_user.permissions.developer):
-        #     if self.appbar_settings_menu_show is False:
-        #         self.appbar_settings_menu_show = True
-        #         print('settings menu', self.appbar_settings_menu)
-        #         # self.appbar_settings_menu = ej.buttons.Button(
-        #         #     {"cssClass": "e-inherit", "iconCss": "fa-solid fa-cog pl-appbar-menu-icon"}
-        #         # )
-        #         self.appbar_settings_menu.appendTo(jQuery("#pl-appbar-settings-menu")[0])
-        #         # self.appbar_settings_menu.element.addEventListener(
-        #         #     "click", self.settings_click
-        #         # )
-
-        # self.appbar_menu.menu_items = nav.PL_APPBAR_MENU.copy()
-        # if (AppEnv.logged_user.permissions.super_admin
-        #         or AppEnv.logged_user.permissions.developer):
-        #     self.appbar_menu.menu_items.extend(nav.PL_APPBAR_MENU_ADMIN)
-        #     self.appbar_menu.menu_items.extend(nav.PL_APPBAR_MENU_DEVELOPER)
-        # print('user role type', AppEnv.logged_user.user_role_type)
-        # self.user_app_permissions = nav.DEFAULT_USER_PERMISSIONS['user_roles'][AppEnv.logged_user.user_role_type]['permissions']
         if AppEnv.logged_user.tenant_uid == SYSTEM_TENANT_UID or AppEnv.logged_user.user_role_type == 'portal_admin':
             app_comps = models.AppComponent.search(tenant_uid=SYSTEM_TENANT_UID, id='user_role_permissions')
             app_permissions = next(iter(app_comps), None)
