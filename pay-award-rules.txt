@@ -1,0 +1,11 @@
+Pay Award Rules
+
+1. ORD: ordinary time rate - first 8 hours of work on a weekday between 5am and 4pm.
+2. OT1: overtime rate - time and a half for the first 2 hours of work on a weekday between 5am and 6pm after ORD.
+3. OT2: double time rate - double time for all hours worked on a weekday between 6pm and 12am after OT1.
+4. ST1: Saturday time and a half rate - time and a half for the first 2 hours of work on a Saturday between 5am and 6pm.
+5. ST2: Saturday double time rate - double time for all hours worked on a Saturday between 5am and 12am after ST1.
+6. SUN: Sunday double time rate - double time and a half for all hours worked on a Sunday.
+7. PH: public holiday double - double time and a half for all hours worked on a public holiday.
+8. WK1: weekly time and a half rate - time and a half for first 2 hours worked in excess of 38 hours in a week.
+9. WK2: weekly double time rate - double time for all hours worked in excess of 40 hours in a week after WK1.

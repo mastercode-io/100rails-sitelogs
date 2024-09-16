@@ -1,0 +1,935 @@
+allow_embedding: false
+correct_dependency_ids: {dep_axwoskh2kbe14m: RKPNSNWS3GPPJAO7}
+db_schema:
+  accounts:
+    client: none
+    columns:
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: website, type: string}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: address, type: simpleObject}
+    - {admin_ui: null, name: email, type: string}
+    - {admin_ui: null, name: logo, type: media}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: phone, type: string}
+    - admin_ui: {order: 0}
+      name: name
+      type: string
+    - {name: default_pay_entity, target: tenants, type: link_single}
+    - {name: pay_entities, target: tenants, type: link_multiple}
+    - {admin_ui: null, name: business_name, type: string}
+    - {admin_ui: null, name: type, type: string}
+    - {admin_ui: null, name: subscription_dates, type: simpleObject}
+    - {admin_ui: null, name: subscription_plan, target: subscription_plans, type: link_single}
+    server: full
+    title: Accounts
+  app_audit_logs:
+    client: none
+    columns:
+    - {admin_ui: null, name: action_by, type: string}
+    - {admin_ui: null, name: action_time, type: datetime}
+    - {admin_ui: null, name: action_type, type: string}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: new_state, type: simpleObject}
+    - {admin_ui: null, name: previous_state, type: simpleObject}
+    - {admin_ui: null, name: record_uid, type: string}
+    - {admin_ui: null, name: table_name, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    server: full
+    title: App Audit Logs
+  app_background_tasks:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      name: task_id
+      type: string
+    - admin_ui: {width: 200}
+      name: context
+      type: simpleObject
+    - admin_ui: {width: 200}
+      name: logged_user
+      type: simpleObject
+    - admin_ui: {width: 200}
+      name: status
+      type: string
+    - admin_ui: {width: 200}
+      name: result
+      type: simpleObject
+    - admin_ui: {width: 200}
+      name: start_time
+      type: datetime
+    - admin_ui: {width: 200}
+      name: updated_time
+      type: datetime
+    server: full
+    title: App Background Tasks
+  app_components:
+    client: none
+    columns:
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: description, type: string}
+    - {name: version, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: permissions, type: simpleObject}
+    - {admin_ui: null, name: props, type: simpleObject}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: type, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: items, target: app_components, type: link_multiple}
+    - admin_ui: {order: 0, width: 200}
+      name: id
+      type: string
+    server: full
+    title: App Components
+  app_custom_fields_schemas:
+    client: none
+    columns:
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: model, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: schema, type: simpleObject}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    server: full
+    title: App Custom Fields Schemas
+  app_enums:
+    client: none
+    columns:
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: options, type: simpleObject}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    server: full
+    title: App Enums
+  app_environments:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: key
+      type: string
+    - admin_ui: {order: -1, width: 200}
+      name: name
+      type: string
+    server: full
+    title: App Environments
+  app_error_logs:
+    client: none
+    columns:
+    - {admin_ui: null, name: user_uid, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: error_time, type: datetime}
+    - {admin_ui: null, name: error_message, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: component, type: string}
+    - {admin_ui: null, name: action, type: string}
+    server: full
+    title: App Error Logs
+  app_grid_views:
+    client: none
+    columns:
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: permissions, type: simpleObject}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: config, type: simpleObject}
+    - {admin_ui: null, name: columns, type: simpleObject}
+    - {admin_ui: null, name: model, type: string}
+    - {admin_ui: null, name: owner, type: string}
+    - admin_ui: {width: 200}
+      name: name
+      type: string
+    server: full
+    title: App Grid Views
+  app_in_api_credentials:
+    client: none
+    columns:
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: api_secret, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: integration, target: app_integrations, type: link_single}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: api_key, type: string}
+    - admin_ui: {width: 200}
+      name: api_user
+      target: users
+      type: link_single
+    server: full
+    title: App In Api Credentials
+  app_integration_connections:
+    client: none
+    columns:
+    - {admin_ui: null, name: api_key, type: string}
+    - {admin_ui: null, name: api_user, target: users, type: link_single}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {name: auth_credentials, type: simpleObject}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: integration, target: app_integrations, type: link_single}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    server: full
+    title: App Integration Connections
+  app_integrations:
+    client: none
+    columns:
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: url, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: service_name, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: connection_type, type: string}
+    server: full
+    title: App Integrations
+  app_out_api_credentials:
+    client: none
+    columns:
+    - {admin_ui: null, name: integration, target: app_integrations, type: link_single}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: api_credentials, type: simpleObject}
+    - {admin_ui: null, name: auth_type, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    server: full
+    title: App Out Api Credentials
+  app_uploads_cache:
+    client: none
+    columns:
+    - {admin_ui: null, name: content, type: media}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: link_name, type: string}
+    - {admin_ui: null, name: link_uid, type: string}
+    - {admin_ui: null, name: meta_info, type: simpleObject}
+    - {admin_ui: null, name: mime_type, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: size, type: number}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    server: full
+    title: App Uploads Cache
+  calendars:
+    client: none
+    columns:
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: public_holidays, type: simpleObject}
+    - {admin_ui: null, name: special_holidays, type: simpleObject}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: week_start, type: string}
+    - {admin_ui: null, name: weekend, type: simpleObject}
+    - {admin_ui: null, name: workdays, type: simpleObject}
+    server: full
+    title: Calendars
+  employee_roles:
+    client: none
+    columns:
+    - admin_ui: {order: -0.03125}
+      name: created_by
+      type: string
+    - admin_ui: {order: -0.0625}
+      name: created_time
+      type: datetime
+    - admin_ui: {order: -1}
+      name: name
+      type: string
+    - admin_ui: {order: -0.5}
+      name: pay_rate
+      type: number
+    - admin_ui: {order: -0.09375}
+      name: tenant_uid
+      type: string
+    - admin_ui: {order: -0.125}
+      name: uid
+      type: string
+    - admin_ui: {order: 0}
+      name: updated_by
+      type: string
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - admin_ui: {order: -0.25}
+      name: status
+      type: string
+    - admin_ui: {width: 200}
+      name: remote_links
+      type: simpleObject
+    server: full
+    title: Employee Roles
+  employees:
+    client: none
+    columns:
+    - {admin_ui: null, name: address, type: simpleObject}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: email, type: string}
+    - {admin_ui: null, name: first_name, type: string}
+    - {admin_ui: null, name: last_name, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: mobile, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: custom_fields, type: simpleObject}
+    - admin_ui: {order: 0, width: 200}
+      name: pay_rate
+      type: number
+    - admin_ui: {width: 200}
+      name: short_code
+      type: string
+    - {admin_ui: null, name: remote_links, type: simpleObject}
+    - admin_ui: {width: 200}
+      name: role
+      target: employee_roles
+      type: link_single
+    server: full
+    title: Employees
+  files:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: path
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: file
+      type: media
+    - admin_ui: {order: 2, width: 200}
+      name: file_version
+      type: string
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: updated_by, type: string}
+    server: full
+    title: Files
+  job_types:
+    client: none
+    columns:
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: short_code, type: string}
+    - admin_ui: {width: 200}
+      name: remote_links
+      type: simpleObject
+    server: full
+    title: Job Types
+  jobs:
+    client: none
+    columns:
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: job_type, target: job_types, type: link_single}
+    - {admin_ui: null, name: custom_fields, type: simpleObject}
+    - admin_ui: {order: 0}
+      name: name
+      type: string
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: location, target: locations, type: link_single}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: created_by, type: string}
+    - admin_ui: {order: 0, width: 200}
+      name: number
+      type: string
+    - {admin_ui: null, name: remote_links, type: simpleObject}
+    - {admin_ui: null, name: tags, target: tags, type: link_multiple}
+    server: full
+    title: Jobs
+  locations:
+    client: none
+    columns:
+    - {admin_ui: null, name: address, type: simpleObject}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - admin_ui: {width: 200}
+      name: short_code
+      type: string
+    - admin_ui: {width: 200}
+      name: remote_links
+      type: simpleObject
+    server: full
+    title: Locations
+  pay_categories:
+    client: none
+    columns:
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: pay_category_type, type: string}
+    - {admin_ui: null, name: remote_links, type: simpleObject}
+    - admin_ui: {width: 200}
+      name: pay_category_code
+      type: string
+    server: full
+    title: Pay Categories
+  pay_rate_rules:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: uid
+      type: string
+    - {admin_ui: null, name: calculation_settings, type: simpleObject}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: pay_rate, type: number}
+    - {admin_ui: null, name: pay_rate_multiplier, type: number}
+    - {admin_ui: null, name: pay_rate_type, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: unit_type, type: string}
+    - {admin_ui: null, name: time_scope, type: string}
+    - {admin_ui: null, name: start_time, type: datetime}
+    - {admin_ui: null, name: scope, target: scopes, type: link_single}
+    - {admin_ui: null, name: end_time, type: datetime}
+    - {admin_ui: null, name: earnings_type, type: string}
+    - {name: time_limits, type: bool}
+    - admin_ui: {width: 200}
+      name: overtime_start
+      type: number
+    - {admin_ui: null, name: max_hours, type: number}
+    - admin_ui: {width: 200}
+      name: count_overtime
+      type: bool
+    server: full
+    title: Pay Rate Rules
+  pay_rate_template_items:
+    client: none
+    columns:
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: pay_rate_multiplier, type: number}
+    - {admin_ui: null, name: pay_rate_rule, target: pay_rate_rules, type: link_single}
+    - {admin_ui: null, name: pay_rate_template, target: pay_rate_templates, type: link_single}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: specific_roles, target: pay_rate_template_specific_roles, type: link_multiple}
+    - {admin_ui: null, name: order_number, type: number}
+    - {admin_ui: null, name: default_pay_rate_title, type: string}
+    - {admin_ui: null, name: default_pay_rate, type: number}
+    - {admin_ui: null, name: default_pay_category, target: pay_categories, type: link_single}
+    server: full
+    title: Pay Rate Template Items
+  pay_rate_template_specific_roles:
+    client: none
+    columns:
+    - {admin_ui: null, name: employee_role, target: employee_roles, type: link_single}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: pay_category, target: pay_categories, type: link_single}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: pay_rate, type: number}
+    - {admin_ui: null, name: pay_rate_template_item, target: pay_rate_template_items, type: link_single}
+    server: full
+    title: Pay Rate Template Specific Roles
+  pay_rate_templates:
+    client: none
+    columns:
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: scope, target: scopes, type: link_single}
+    - {admin_ui: null, name: pay_rate_items, target: pay_rate_template_items, type: link_multiple}
+    server: full
+    title: Pay Rate Templates
+  payroll_configs:
+    client: none
+    columns:
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: pay_day, type: string}
+    - {admin_ui: null, name: pay_period_end_day, type: string}
+    - {admin_ui: null, name: pay_period_start_day, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: frequency, type: string}
+    - admin_ui: {width: 200}
+      name: pay_category_type
+      type: string
+    - admin_ui: {order: -1, width: 200}
+      name: payrun_initial_date
+      type: date
+    - admin_ui: {order: 0, width: 200}
+      name: timesheet_integration
+      target: app_integrations
+      type: link_single
+    - {admin_ui: null, name: payroll_integration, target: app_integrations, type: link_single}
+    - {admin_ui: null, name: timesheet_connection, target: app_integration_connections, type: link_single}
+    - {admin_ui: null, name: payroll_connection, target: app_integration_connections, type: link_single}
+    server: full
+    title: Payroll Configs
+  payrun_items:
+    client: none
+    columns:
+    - {admin_ui: null, name: amount, type: number}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: employee, target: employees, type: link_single}
+    - {admin_ui: null, name: pay_category, target: pay_categories, type: link_single}
+    - {admin_ui: null, name: pay_rate, type: number}
+    - {name: payrun, target: payruns, type: link_single}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: timesheet, target: timesheets, type: link_single}
+    - {admin_ui: null, name: title, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: units, type: number}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: remote_links, type: simpleObject}
+    server: full
+    title: Payrun Items
+  payruns:
+    client: none
+    columns:
+    - {admin_ui: null, name: notes, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: pay_date, type: date}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: pay_period_end, type: date}
+    - {admin_ui: null, name: pay_period_start, type: date}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: remote_links, type: simpleObject}
+    - {admin_ui: null, name: action_log, type: simpleObject}
+    server: full
+    title: Payruns
+  scope_types:
+    client: none
+    columns:
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    server: full
+    title: Scope Types
+  scopes:
+    client: none
+    columns:
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: type, target: scope_types, type: link_single}
+    - {admin_ui: null, name: custom_fields, type: simpleObject}
+    - admin_ui: {width: 200}
+      name: short_code
+      type: string
+    server: full
+    title: Scopes
+  subscription_plans:
+    client: none
+    columns:
+    - {admin_ui: null, name: app_config, type: simpleObject}
+    - {admin_ui: null, name: components, target: app_components, type: link_multiple}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: features, type: simpleObject}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: price, type: number}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    server: full
+    title: Subscription Plans
+  tags:
+    client: none
+    columns:
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: short_code, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    server: full
+    title: Tags
+  tenants:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: name
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: uid
+      type: string
+    - admin_ui: {order: 0.5}
+      name: created_by
+      type: string
+    - admin_ui: {order: 0.25}
+      name: created_time
+      type: datetime
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - admin_ui: {order: 0.03125}
+      name: updated_by
+      type: string
+    - admin_ui: {order: 0.125}
+      name: updated_time
+      type: datetime
+    - admin_ui: {order: 0.0625, width: 200}
+      name: status
+      type: string
+    - admin_ui: {order: 0.015625, width: 200}
+      name: type
+      type: string
+    - admin_ui: {order: 0.00390625, width: 200}
+      name: account_uid
+      type: string
+    - {admin_ui: null, name: description, type: string}
+    server: full
+    title: Tenants
+  timesheet_types:
+    client: none
+    columns:
+    - {admin_ui: null, name: configuration, type: simpleObject}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: short_code, type: string}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: status, type: string}
+    - admin_ui: {}
+      name: remote_links
+      type: simpleObject
+    server: full
+    title: Timesheet Types
+  timesheets:
+    client: none
+    columns:
+    - {admin_ui: null, name: approved_by, target: employees, type: link_single}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: date, type: date}
+    - {admin_ui: null, name: employee, target: employees, type: link_single}
+    - {admin_ui: null, name: end_time, type: datetime}
+    - {admin_ui: null, name: job, target: jobs, type: link_single}
+    - {admin_ui: null, name: notes, type: string}
+    - {admin_ui: null, name: start_time, type: datetime}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: timesheet_type, target: timesheet_types, type: link_single}
+    - {admin_ui: null, name: total_pay, type: number}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: payrun, target: payruns, type: link_single}
+    - {admin_ui: null, name: remote_links, type: simpleObject}
+    - admin_ui: {width: 200}
+      name: pay_lines
+      type: simpleObject
+    server: full
+    title: Timesheets
+  uploads:
+    client: none
+    columns:
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: size, type: number}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: mime_type, type: string}
+    - {admin_ui: null, name: meta_info, type: simpleObject}
+    - {admin_ui: null, name: location, type: simpleObject}
+    - {admin_ui: null, name: link_uid, type: string}
+    - {admin_ui: null, name: link_name, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: created_by, type: string}
+    server: full
+    title: Uploads
+  user_profiles:
+    client: none
+    columns:
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: user, target: users, type: link_single}
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: updated_by, type: string}
+    server: full
+    title: User Profiles
+  user_roles:
+    client: none
+    columns:
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: description, type: string}
+    - {admin_ui: null, name: name, type: string}
+    - {admin_ui: null, name: permissions, type: simpleObject}
+    - {admin_ui: null, name: status, type: string}
+    - {admin_ui: null, name: tenant_uid, type: string}
+    - {admin_ui: null, name: uid, type: string}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - {admin_ui: null, name: access_permissions, type: simpleObject}
+    - admin_ui: {width: 200}
+      name: type
+      type: string
+    server: full
+    title: User Roles
+  users:
+    client: none
+    columns:
+    - admin_ui: {order: -1, width: 200}
+      name: email
+      type: string
+    - admin_ui: {order: -0.5, width: 200}
+      name: enabled
+      type: bool
+    - admin_ui: {order: -0.4375, width: 200}
+      name: last_login
+      type: datetime
+    - admin_ui: {order: 3, width: 200}
+      name: password_hash
+      type: string
+    - admin_ui: {order: 4, width: 200}
+      name: n_password_failures
+      type: number
+    - admin_ui: {order: 5, width: 200}
+      name: confirmed_email
+      type: bool
+    - admin_ui: {order: 6, width: 200}
+      name: remembered_logins
+      type: simpleObject
+    - admin_ui: {order: 7, width: 200}
+      name: signed_up
+      type: datetime
+    - admin_ui: {order: 8, width: 200}
+      name: uid
+      type: string
+    - {admin_ui: null, name: email_confirmation_key, type: string}
+    - admin_ui: {order: 9, width: 200}
+      name: tenant_uid
+      type: string
+    - admin_ui: {order: -0.375, width: 200}
+      name: timezone
+      type: string
+    - {admin_ui: null, name: created_by, type: string}
+    - {admin_ui: null, name: created_time, type: datetime}
+    - {admin_ui: null, name: updated_by, type: string}
+    - {admin_ui: null, name: updated_time, type: datetime}
+    - admin_ui: {order: -2, width: 200}
+      name: permissions
+      type: simpleObject
+    - admin_ui: {order: -3, width: 200}
+      name: first_name
+      type: string
+    - admin_ui: {order: -2.5, width: 200}
+      name: last_name
+      type: string
+    - admin_ui: {order: 0, width: 200}
+      name: user_role
+      target: user_roles
+      type: link_single
+    server: full
+    title: Users
+dependencies:
+- dep_id: dep_axwoskh2kbe14m
+  resolution_hints: {app_id: RKPNSNWS3GPPJAO7, name: AnvilFusion, package_name: AnvilFusion}
+  version: {branch: master}
+metadata: {description: Payroll Timesheet Pre-Processor, title: PayLogs}
+name: Clone of PayLogs
+native_deps:
+  head_html: |
+    <!-- Material Design icons -->
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--Fontawsome library -->
+    <script src="https://kit.fontawesome.com/1466988a10.js" crossorigin="anonymous"></script>
+
+    <!-- Fonts -->
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+    <!-- Essential JS 2 styles and scripts -->
+    <link href="https://cdn.syncfusion.com/ej2/26.2.4/tailwind.css" rel="stylesheet">
+    <script src="https://cdn.syncfusion.com/ej2/26.2.4/dist/ej2.min.js" type="text/javascript"></script>
+    <script src="_/theme/aws-sdk-v3-bundle.js" type="text/javascript"></script>
+    <link href="_/theme/anvil-fusion.css" rel="stylesheet">
+    <link href="_/theme/home-page.css" rel="stylesheet">
+
+    <!-- Tailwind CSS-->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Syncfusion license and modules -->
+    <script>
+      ej.base.registerLicense('Ngo9BigBOggjHTQxAR8/V1NCaF5cXmZCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdnWXZfc3VVRWVeWEZ0WEc=');
+      ej.schedule.Schedule.inject(ej.schedule.DragAndDrop, ej.schedule.Resize)
+    </script>
+
+    <!-- Kendo UI for jQuery -->
+    <!--  <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2023.3.1114/styles/kendo.common.min.css"> -->
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/7.0.2/default/default-main.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2023.3.1114/styles/kendo.uniform.min.css" />
+    <script src="https://kendo.cdn.telerik.com/2023.3.1114/js/kendo.all.min.js"></script>
+package_name: PayLogs
+runtime_options:
+  client_version: '3'
+  server_persist: true
+  server_spec: {base: python310-minimal}
+  server_version: python3-full
+  version: 2
+scheduled_tasks: []
+secrets:
+  api_request_password:
+    type: secret
+    value: {BBEZAPHMPN72GFKM: KoXdvQ8zeJI1+UXkKHLYd7ZfvdEnKrtnux6jxqvheuUU2XH6IgYOs1zNdZyWC9nmKSHfsEzEDUTU3fjpHLJ0eA0wtKhlMNZTpE6IRlrWtbbJqV9LdMsLNaZm8d/UYTpt8MWdUyJ8+YY3ZIujv+zu}
+  copilot_assistant_id:
+    type: secret
+    value: {BBEZAPHMPN72GFKM: pV/dtqwEhKUOFJILQ2uTfqbiupy6ecYRnbDDUrpdN2u8T45NcedlaYA8aLRwTLNMHKd4EvziJ8vUD8ivDwhrbDY4z8ieYmJCCap46hxjwYnkR5T8HpYpNoilwc0tf+ml/dioR0Rs6sd+cul/WuWrOwl4jqO0UOPX8NWxAQ==}
+  openai_api_key:
+    type: secret
+    value: {BBEZAPHMPN72GFKM: /iuGGCO5Dkxf56NyoJ2MnIkrWX//+xivr7lfxBZDeZhdXNpTv8kins/p1UhV1IgtO9P/JsymM+IDJnC5Ba5T3N/yz8teg8h9CtM9m5riRJa19odEGsOT8OSJcdYvuJZjVAooXe/8giDJvdD1S4UOEPGIAMWGuR7F8tMOBBeWdPWAtnF0DZOsjuXBjUnkzjYu7c80aZv/KPyIAfjaHkce1x0F5zlYpnilQE684Uo57pQd4u9ufZZbD6IWp4LmGA==}
+  qb_auth_sandbox:
+    type: secret
+    value: {BBEZAPHMPN72GFKM: RcVxQibZGV7PdZ0RT0UVd9Swi2xq5AqRz+iY5UAuRUSAqVoWo7CF7g/D+vqUzGa523i5IHPTJ9V30yPrfmI+wE9wAjgQYD+VjjcypAorcpJgVtxtCW5X5VV0RjRTgpsi7t4xhnvLmv2+6FyzrQv0ZaU9y+cxadfIpg+ZnbC5lVLEMLdUy34cdZKChBsA7MNinEi5Ks96dd5OjSR0qahC55HUGCP/9PVWFFQKGPrP9Ig/MU45RRUANmgKppHqpxyc6zhxs6/HMM1jjSsJIULqiH2gWkodtNOYr/1/0C8WOv8ff7uVrxm2}
+  xero_auth:
+    type: secret
+    value: {BBEZAPHMPN72GFKM: ysV0Iq5n6YNWU5g63LsPnOFDGa3UWJ0qDiLyTGAgeMt3zV4coLGljdKzD5z2KXqXQxK1g1PN6dfTR/2awAOotXk9B1yiXMtYbVQxyr47JQvy5jOWwqENcVXjvjrRe5iuT80p4WBAsL1ID/LxzO7YlUwQGvtdDAwnCex+zQbRUgWT2eZeQW5WeTgoyLD8rFFVL/R6ZIsMIe0niy98EuRQm+nWaHdxS6wK+LOmstI63M8LbD2BLQp0YI69PBLP2IYEKs+doWPDlCfmns7lrB7UAk/ih1ykxTKsZVtt064=}
+services:
+- client_config: {enable_v2: true}
+  server_config: {}
+  source: /runtime/services/tables.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/anvil/files.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/anvil/secrets.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/stripe.yml
+- client_config: {allow_remember_me: true, allow_signup: true, confirm_email: true, enable_automatically: true, remember_me_days: 30, require_secure_passwords: true, use_email: true, use_facebook: true, use_google: true, use_token: true}
+  server_config: {user_table: users}
+  source: /runtime/services/anvil/users.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/google.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/facebook.yml
+startup: {module: app.HomePage, type: form}
+startup_form: null
+uplink_visible: true

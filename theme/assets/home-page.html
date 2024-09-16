@@ -1,0 +1,60 @@
+<!--suppress ALL -->
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_/theme/home-page.css" rel="stylesheet">
+
+  <!-- daisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script>
+    tailwind.config = {
+      daisyui: {
+        themes: ["light", "dark"],
+        darkTheme: "dark",
+      },
+    }
+  </script>
+
+  <body>
+    <div data-theme="light" id="pl-app-container" class="pl-app-container">
+        <header id="pl-appbar">
+            <div>
+                <div id="pl-appbar-logo">
+                    <img src="_/theme/pl-logo.png" height="32px" style="height: 32px!important;">
+                </div>
+                <ul id="pl-appbar-menu"></ul>
+                <!-- <div id="pl-appbar-spacer" class="e-appbar-spacer"></div> -->
+                <div id="pl-appbar-spacer" class="e-appbar-spacer"
+                    style="text-align: right;color: #EADFFF;font-size: 12px;font-style: italic;padding-right: 15px;margin-top: -8px;">
+                </div>
+                <div class="e-appbar-spacer" style="text-align: right;margin-right: 10px;">
+                    Pay Entity:
+                </div>
+                <div id="pl-appbar-data-file"></div>
+                <div id="pl-appbar-settings-menu"></div>
+                <div id="pl-appbar-settings-form"></div>
+                <div id="pl-appbar-assistant-toggle"></div>
+                <div id="pl-appbar-notification-list"></div>
+                <div id="pl-appbar-user-menu"></div>
+            </div>
+        </header>
+        <div id="pl-page-container" class="pl-page-container">
+            <!-- <div id="pl-sidebar">
+                <ul id="pl-sidebar-menu" class="pl-sidebar-menu"></ul>
+            </div> -->
+            <div id="pl-content" class="e-main-content pl-content"></div>
+            <div id="pl-assistant">
+    <!--            <div id="pl-assistant-chat"></div>-->
+            </div>
+        </div>
+        <div id="pl-footer">
+            <div id="pl-footer-content">
+                <div id="pl-footer-logo" class="pl-footer-logo">
+                    <img src="_/theme/pl-logo.png" height="18px" style="height: 18px!important;">
+                </div>
+                <div class="pl-footer-logo">Paylogs v. 0.1</div>
+                <div id="pl-footer-spacer" class="e-appbar-spacer"></div>
+                <div id="pl-footer-copyright" class="pl-footer-copyright drop-shadow">&copy; 2024 100rails</div>
+        </div>
+    </div>
+  </body>
+</html>
