@@ -84,7 +84,7 @@ class AppbarMenu:
 
 
     def handle_overflow(self):
-        menu_container = jQuery(f"#{self.container_el} .e-menu")[0]
+        menu_container = jQuery(f"#{self.container_el}")[0]
         menu_items = menu_container.children
         total_width = menu_container.clientWidth
         current_width = 0
