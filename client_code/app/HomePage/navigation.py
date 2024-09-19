@@ -74,7 +74,9 @@ class AppbarMenu:
                 # 'cssClass': 'e-inherit pl-appbar-menu',
                 'cssClass': 'e-inherit rounded-box pl-appbar-menu',
                 'items': self.menu_items,
-                'select': self.menu_select
+                'select': self.menu_select,
+                'overflowMode': 'Popup',
+                'enableScrolling': True
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
 
