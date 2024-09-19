@@ -90,6 +90,36 @@ select:-webkit-autofill:focus {
     margin-bottom: 5px!important;
     width: 180px;!important;
 }
+.sl-menu-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.sl-menu-item {
+    white-space: nowrap;
+}
+
+.sl-menu-ellipsis {
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.sl-menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.sl-menu-dropdown.show {
+    display: block;
+}
+
 /*#pl-appbar-menu .e-menu-wrapper.e-menu-popup {*/
 /*    border-radius: 0!important;*/
 /*}*/

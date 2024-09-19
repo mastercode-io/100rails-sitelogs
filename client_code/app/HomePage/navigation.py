@@ -70,6 +70,7 @@ class AppbarMenu:
         if self.menu:
             self.menu.items = self.menu_items
         else:
+            jQuery(f"#{self.container_el}").addClass('sl-menu-container')
             self.menu = ej.navigations.Menu({
                 # 'cssClass': 'e-inherit pl-appbar-menu',
                 'cssClass': 'e-inherit rounded-box pl-appbar-menu',
@@ -79,6 +80,32 @@ class AppbarMenu:
                 # 'enableScrolling': True
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
+            self.handle_overflow()
+
+
+    def handle_overflow(self):
+        menu_container = jQuery(f"#{self.container_el} .e-menu")[0]
+        menu_items = menu_container.children
+        total_width = menu_container.clientWidth
+        current_width = 0
+        overflow_items = []
+
+        for item in menu_items:
+            item_width = item.offsetWidth
+            if current_width + item_width > total_width:
+                overflow_items.append(item)
+            else:
+                current_width += item_width
+
+        if overflow_items:
+            menu_ellipsis = jQuery('<li class="sl-menu-item sl-menu-ellipsis">...</li>')[0]
+            dropdown = jQuery('<ul class="sl-menu-dropdown"></ul>')[0]
+            for item in overflow_items:
+                dropdown.appendChild(item)
+            menu_ellipsis.appendChild(dropdown)
+            menu_container.appendChild(menu_ellipsis)
+
+            jQuery(menu_ellipsis).on('click', lambda e: jQuery(dropdown).toggleClass('show'))
 
 
     def menu_select(self, args):
