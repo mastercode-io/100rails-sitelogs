@@ -76,7 +76,7 @@ class AppbarMenu:
                 'items': self.menu_items,
                 'select': self.menu_select,
                 'overflowMode': 'Popup',
-                'enableScrolling': True
+                # 'enableScrolling': True
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
 
