@@ -26,17 +26,17 @@ PL_ASSISTANT_WIDTH = 300
 #     return user_menu_items
 
 
-def get_user_menu_items(menu_items: list, user_permissions: dict):
-    user_menu_items = []
-    for item in menu_items:
-        if item['id'] in user_permissions and user_permissions[item['id']]['has_access']:
-            user_menu_item = {'id': item['id'], 'text': item['text']}
-            if 'items' in item:
-                user_menu_item['items'] = get_user_menu_items(item['items'], user_permissions[item['id']]['items'])
-            else:
-                user_menu_item['items'] = []
-            user_menu_items.append(user_menu_item)
-    return user_menu_items
+# def get_user_menu_items(menu_items: list, user_permissions: dict):
+#     user_menu_items = []
+#     for item in menu_items:
+#         if item['id'] in user_permissions and user_permissions[item['id']]['has_access']:
+#             user_menu_item = {'id': item['id'], 'text': item['text']}
+#             if 'items' in item:
+#                 user_menu_item['items'] = get_user_menu_items(item['items'], user_permissions[item['id']]['items'])
+#             else:
+#                 user_menu_item['items'] = []
+#             user_menu_items.append(user_menu_item)
+#     return user_menu_items
 
 
 # Appbar navigation class
@@ -65,22 +65,46 @@ class AppbarMenu:
         # self.open = True
 
 
+    def get_user_menu_items(self, menu_items: list, user_permissions: dict):
+        user_menu_items = []
+        for item in menu_items:
+            if item['id'] in user_permissions and user_permissions[item['id']]['has_access']:
+                user_menu_item = {
+                    'type': 'Input',
+                    'template': ej.splitbuttons.DropDownButton({
+                        'items': item.get('items', []),
+                        'content': item['text'],
+                        'select': self.menu_select
+                    })
+                }
+                user_menu_items.append(user_menu_item)
+        return user_menu_items
+
+
     def show(self):
         print('AppBar Show')
         if self.menu:
             self.menu.items = self.menu_items
         else:
             jQuery(f"#{self.container_el}").addClass('sl-menu-container')
-            self.menu = ej.navigations.Menu({
+            # self.menu = ej.navigations.Menu({
+            #     # 'cssClass': 'e-inherit pl-appbar-menu',
+            #     'cssClass': 'e-inherit rounded-box pl-appbar-menu',
+            #     'items': self.menu_items,
+            #     'select': self.menu_select,
+            #     'overflowMode': 'Popup',
+            #     'enableScrolling': True
+            # })
+            self.menu = ej.navigations.Toolbar({
                 # 'cssClass': 'e-inherit pl-appbar-menu',
                 'cssClass': 'e-inherit rounded-box pl-appbar-menu',
                 'items': self.menu_items,
-                'select': self.menu_select,
+                # 'clicked': self.menu_select,
                 'overflowMode': 'Popup',
-                'enableScrolling': True
+                # 'enableScrolling': True
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
-            self.handle_overflow()
+            # self.handle_overflow()
 
 
     def handle_overflow(self):

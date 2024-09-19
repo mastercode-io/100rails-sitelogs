@@ -197,7 +197,10 @@ class HomePage(HomePageTemplate):
             app_permissions = models.AppComponent.get_by('id', 'user_role_permissions')
         self.user_app_permissions = app_permissions['props']['user_roles'][AppEnv.logged_user.user_role_type][
             'permissions']
-        user_app_menu = nav.get_user_menu_items(
+        # user_app_menu = nav.get_user_menu_items(
+        #     nav.PL_MENU_ITEMS,
+        #     self.user_app_permissions['app_menu'])
+        user_app_menu = self.appbar_menu.get_user_menu_items(
             nav.PL_MENU_ITEMS,
             self.user_app_permissions['app_menu'])
         self.appbar_menu.menu_items = user_app_menu
