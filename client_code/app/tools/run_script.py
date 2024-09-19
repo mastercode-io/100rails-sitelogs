@@ -96,35 +96,35 @@ def update_permissions_schema():
 
 def bar():
     tenants = [*models.Tenant.search(tenant_uid=None)]
-    day_type_options = {
-        "RDO": "RDO",
-        "Week": "Week",
-        "AnyDay": "Any Day",
-        "Sunday": "Sunday",
-        "Weekday": "Weekday",
-        "Weekend": "Weekend",
-        "Saturday": "Saturday",
-        "PublicHoliday": "Public Holiday"
-    }
-    for tenant in tenants:
-        enum = models.AppEnum(
-            name='DYA_TYPE_OPTIONS',
-            tenant_uid=tenant['uid'],
-            options=day_type_options
-        ).save()
-
+    # day_type_options = {
+    #     "RDO": "RDO",
+    #     "Week": "Week",
+    #     "AnyDay": "Any Day",
+    #     "Sunday": "Sunday",
+    #     "Weekday": "Weekday",
+    #     "Weekend": "Weekend",
+    #     "Saturday": "Saturday",
+    #     "PublicHoliday": "Public Holiday"
+    # }
     # for tenant in tenants:
-    #     user_role_permissions = nav.DEFAULT_USER_PERMISSIONS.copy()
-    #     user_role_permissions['user_roles'].pop('portal_admin', None)
-    #     if tenant['uid'] != SYSTEM_TENANT_UID:
-    #         app_component = models.AppComponent(
-    #             name='User Role Permissions',
-    #             id='user_role_permissions',
-    #             type='object',
-    #             version='1.0',
-    #             tenant_uid=tenant['uid'],
-    #             props=user_role_permissions
-    #         ).save()
+    #     enum = models.AppEnum(
+    #         name='DYA_TYPE_OPTIONS',
+    #         tenant_uid=tenant['uid'],
+    #         options=day_type_options
+    #     ).save()
+
+    for tenant in tenants:
+        user_role_permissions = nav.DEFAULT_USER_PERMISSIONS.copy()
+        user_role_permissions['user_roles'].pop('portal_admin', None)
+        if tenant['uid'] != SYSTEM_TENANT_UID:
+            app_component = models.AppComponent(
+                name='User Role Permissions',
+                id='user_role_permissions',
+                type='object',
+                version='1.0',
+                tenant_uid=tenant['uid'],
+                props=user_role_permissions
+            ).save()
 
     pass
     # search_query = [q.none_of(payrun=None)]
