@@ -44,6 +44,8 @@ select:-webkit-autofill:focus {
 #pl-appbar {
     grid-area: appbar;
     background-color: #005ca5;
+    display: flex;
+    align-items: center;
 }
 
 /* #pl-appbar-menu {
@@ -71,6 +73,11 @@ select:-webkit-autofill:focus {
     margin: 0 3px;
 }
 
+#pl-appbar-menu {
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+}
 #pl-appbar-menu.e-menu-parent {
     /*font-family: "Roboto", sans-serif!important;*/
     /*font-size: 8px !important;*/
