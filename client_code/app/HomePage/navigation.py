@@ -80,6 +80,7 @@ class AppbarMenu:
                     })
                 }
                 user_menu_items.append(user_menu_item)
+                print(item['id'], item.get('items', []))
         return user_menu_items
 
 
