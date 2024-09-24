@@ -107,13 +107,21 @@ class AppbarMenu:
                 # 'enableScrolling': True
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
-            item_obj = self.menu.items[0]
-            print('IETM OBJ')
-            for k in item_obj.keys():
-                print(k, item_obj[k])
-            print('TEMPLATE')
-            for k in item_obj.template.keys():
-                print(k, item_obj.template[k])
+            for item, option in zip(self.menu.items, self.menu_items):
+                item.element.value = option['text']
+                # item.template = ej.splitbuttons.DropDownButton({
+                #     'items': [ej.navigations.ContextMenu({'items': sub['items']}) if 'items' in sub else sub for sub in option.get('items', [])],
+                #     'content': option['text'],
+                #     'select': self.menu_select,
+                #     # 'created': self.menu_created,
+                # })
+            # item_obj = self.menu.items[0]
+            # print('IETM OBJ')
+            # for k in item_obj.keys():
+            #     print(k, item_obj[k])
+            # print('TEMPLATE')
+            # for k in item_obj.template.keys():
+            #     print(k, item_obj.template[k])
             # print('activeElem')
             # for k in item_obj.template.activElem[0].keys():
             #     print(k, item_obj.template.activElem[0][k])
