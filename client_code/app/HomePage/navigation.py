@@ -110,7 +110,7 @@ class AppbarMenu:
 
     def menu_created(self, args):
         print('Menu Created', args)
-        print(args.item)
+        # print(args.item)
 
 
     def handle_overflow(self):
