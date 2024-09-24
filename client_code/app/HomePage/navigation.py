@@ -110,7 +110,7 @@ class AppbarMenu:
             print('IETM OBJ')
             for k in item_obj.keys():
                 print(k, item_obj[k])
-                print('TEMPLATE')
+            print('TEMPLATE')
             for k in item_obj.template.keys():
                 print(k, item_obj.template[k])
             # self.handle_overflow()
