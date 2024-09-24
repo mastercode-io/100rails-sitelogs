@@ -72,9 +72,9 @@ class AppbarMenu:
                 user_menu_item = {
                     'type': 'Input',
                     'text': item['text'],
-                    'template': ej.dropdowns.DropDownList({
-                        'dataSource': item.get('items', []),
-                        'fields': {'text': 'text', 'value': 'id'},
+                    'template': ej.splitbuttons.DropDownButton({
+                        'items': item.get('items', []),
+                        'content': item['text'],
                         'select': self.menu_select
                     })
                 }
