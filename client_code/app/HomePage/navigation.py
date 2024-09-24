@@ -107,8 +107,12 @@ class AppbarMenu:
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
             item_obj = self.menu.items[0]
-            for k in item_obj.template.activeElem[0].keys():
-                print(k, item_obj.template.activeElem[0][k])
+            print('IETM OBJ')
+            for k in item_obj.keys():
+                print(k, item_obj[k])
+                print('TEMPLATE')
+            for k in item_obj.template.keys():
+                print(k, item_obj.template[k])
             # self.handle_overflow()
 
     def menu_created(self, args):
