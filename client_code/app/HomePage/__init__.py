@@ -252,7 +252,7 @@ class HomePage(HomePageTemplate):
             self.start_page = self.user_app_permissions['start_page']
 
         # self.appbar_user_menu.items[0].text = AppEnv.logged_user.user_name + '<br>' + AppEnv.logged_user.email
-        anvil.js.window.document.getElementById('pl-appbar-spacer').innerHTML = AppEnv.logged_user.app_mode
+        # anvil.js.window.document.getElementById('pl-appbar-spacer').innerHTML = AppEnv.logged_user.app_mode
 
         tenant = models.Tenant.get(AppEnv.logged_user.tenant_uid)
         self.account = models.Account.get(tenant['account_uid'])
@@ -263,14 +263,14 @@ class HomePage(HomePageTemplate):
             AppEnv.logged_user.pay_entities = [df.to_json_dict() for df in self.account['pay_entities']]
         self.appbar_data_file.options = AppEnv.logged_user.pay_entities
         self.appbar_data_file.value = AppEnv.logged_user.tenant_uid
-        self.appbar_data_file.show()
-        data_file_tooltip = ej.popups.Tooltip({
-            "content": "Select Data File",
-            "position": "BottomCenter",
-        })
-        data_file_tooltip.appendTo(f'#{self.appbar_data_file.container_id}')
-        if self.appbar_data_file.control:
-            self.appbar_data_file.control.showClearButton = False
+        # self.appbar_data_file.show()
+        # data_file_tooltip = ej.popups.Tooltip({
+        #     "content": "Select Data File",
+        #     "position": "BottomCenter",
+        # })
+        # data_file_tooltip.appendTo(f'#{self.appbar_data_file.container_id}')
+        # if self.appbar_data_file.control:
+        #     self.appbar_data_file.control.showClearButton = False
         print('LOAD UI: ', time.time() - stime)
 
         self.assistant.show()
