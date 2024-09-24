@@ -104,6 +104,7 @@ class AppbarMenu:
                 'cssClass': 'e-inherit rounded-box pl-appbar-menu',
                 'items': self.menu_items,
                 # 'clicked': self.menu_select,
+                'width': '60%',
                 'overflowMode': 'Popup',
                 # 'enableScrolling': True
             })
