@@ -124,6 +124,7 @@ class AppbarMenu:
             for k in item_obj.template.dropDown.keys():
                 print(k, item_obj.template.dropDown[k])
             item_obj.template.element.value = 'DASHBOARD'
+            item_obj.template.dropDown.content = ['DASHBOARD', 'TIMESHEETS', 'PAYRUNS']
             # self.handle_overflow()
 
     def menu_created(self, args):
