@@ -109,7 +109,7 @@ class AppbarMenu:
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
             for item, option in zip(self.menu.items, self.menu_items):
-                item.element.value = option['text']
+                item.template.element.value = option['text']
                 # item.template = ej.splitbuttons.DropDownButton({
                 #     'items': [ej.navigations.ContextMenu({'items': sub['items']}) if 'items' in sub else sub for sub in option.get('items', [])],
                 #     'content': option['text'],
