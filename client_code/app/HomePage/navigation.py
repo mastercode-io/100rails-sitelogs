@@ -72,7 +72,6 @@ class AppbarMenu:
                 user_menu_item = {
                     'id': item['id'],
                     'type': 'Input',
-                    'htmlAttributes': {'value': item['text']},
                     'template': ej.splitbuttons.DropDownButton({
                         'items': item.get('items', []),
                         'content': item['text'],
@@ -108,8 +107,8 @@ class AppbarMenu:
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
             item_obj = self.menu.items[0]
-            for k in item_obj.keys():
-                print(k, item_obj[k])
+            for k in item_obj.template.keys():
+                print(k, item_obj.template[k])
             # self.handle_overflow()
 
     def menu_created(self, args):
