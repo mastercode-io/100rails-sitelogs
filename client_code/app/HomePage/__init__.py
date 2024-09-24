@@ -291,12 +291,12 @@ class HomePage(HomePageTemplate):
     def form_show(self, **event_args):
         # Append appbar controls to elements
         self.appbar.appendTo(jQuery("#pl-appbar")[0])
-        self.appbar_notification_list.appendTo(jQuery("#pl-appbar-notification-list")[0])
-        appbar_notifications_tooltip = ej.popups.Tooltip({
-            "content": "Notifications",
-            "position": "BottomCenter",
-        })
-        appbar_notifications_tooltip.appendTo(self.appbar_notification_list.element)
+        # self.appbar_notification_list.appendTo(jQuery("#pl-appbar-notification-list")[0])
+        # appbar_notifications_tooltip = ej.popups.Tooltip({
+        #     "content": "Notifications",
+        #     "position": "BottomCenter",
+        # })
+        # appbar_notifications_tooltip.appendTo(self.appbar_notification_list.element)
         self.login_user()
 
 
