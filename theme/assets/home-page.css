@@ -86,6 +86,13 @@ select:-webkit-autofill:focus {
     color: #a0d4ff;
     border: none;
 }
+#sl-appbar-menu-left.e-toolbar .e-toolbar-btn,
+#sl-appbar-menu-right.e-toolbar .e-toolbar-btn {
+    /* Add your styles here */
+    background-color: #005ca5;
+    color: #a0d4ff;
+    border: none;
+}
 
 #sl-appbar-menu {
     display: flex;
