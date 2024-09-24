@@ -72,6 +72,7 @@ class AppbarMenu:
                 user_menu_item = {
                     'id': item['id'],
                     'type': 'Input',
+                    'text': item['text'],
                     'template': ej.splitbuttons.DropDownButton({
                         'items': [ej.navigations.ContextMenu({'items': sub['items']}) if 'items' in sub else sub for sub in item.get('items', [])],
                         'content': item['text'],
