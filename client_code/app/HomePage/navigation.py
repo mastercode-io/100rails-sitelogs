@@ -74,7 +74,7 @@ class AppbarMenu:
                     'text': item['text'],
                     'template': ej.splitbuttons.DropDownList({
                         'dataSource': item.get('items', []),
-                        'fields': {'text': 'text', 'id': 'id'},
+                        'fields': {'text': 'text', 'value': 'id'},
                         'select': self.menu_select
                     })
                 }
