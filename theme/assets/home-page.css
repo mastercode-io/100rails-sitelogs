@@ -79,7 +79,7 @@ select:-webkit-autofill:focus {
     background-color: #005ca5;
     border: none;
 }
-#sl-appbar-menu-left .e-toolbar .e-toolbar-items .e-toolbar-item .e-dropdown-btn,
+#sl-appbar-menu-left.e-toolbar .e-toolbar-items .e-toolbar-item .e-dropdown-btn,
 #sl-appbar-menu-right.e-toolbar .e-toolbar-items .e-toolbar-item .e-dropdown-btn {
     /* Add your styles here */
     background-color: #005ca5;
