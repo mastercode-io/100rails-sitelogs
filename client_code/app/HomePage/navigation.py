@@ -106,8 +106,9 @@ class AppbarMenu:
                 # 'enableScrolling': True
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
-            for item in self.menu.items:
-                print(item.id)
+            item_obj = self.menu.items[0]
+            for k in item_obj.keys():
+                print(k, item_obj[k])
             # self.handle_overflow()
 
     def menu_created(self, args):
