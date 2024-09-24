@@ -79,8 +79,22 @@ select:-webkit-autofill:focus {
     background-color: #005ca5;
     border: none;
 }
-#sl-appbar-menu-left.e-toolbar .e-toolbar-items .e-toolbar-item .e-dropdown-btn,
-#sl-appbar-menu-right.e-toolbar .e-toolbar-items .e-toolbar-item .e-dropdown-btn {
+#sl-appbar-menu-left.e-toolbar .e-toolbar-items,
+#sl-appbar-menu-right.e-toolbar .e-toolbar-items {
+    /* Add your styles here */
+    background-color: #005ca5;
+    color: #a0d4ff;
+    border: none;
+}
+#sl-appbar-menu-left.e-toolbar .e-toolbar-item,
+#sl-appbar-menu-right.e-toolbar .e-toolbar-item {
+    /* Add your styles here */
+    background-color: #005ca5;
+    color: #a0d4ff;
+    border: none;
+}
+#sl-appbar-menu-left.e-toolbar .e-dropdown-btn,
+#sl-appbar-menu-right.e-toolbar .e-dropdown-btn {
     /* Add your styles here */
     background-color: #005ca5;
     color: #a0d4ff;
