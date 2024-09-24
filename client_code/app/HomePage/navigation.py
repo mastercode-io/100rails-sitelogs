@@ -70,8 +70,8 @@ class AppbarMenu:
         for item in menu_items:
             if item['id'] in user_permissions and user_permissions[item['id']]['has_access']:
                 user_menu_item = {
-                    'type': 'Button',
-                    'text': item['text'],
+                    'type': 'Input',
+                    'value': item['text'],
                     'template': ej.splitbuttons.DropDownButton({
                         'items': item.get('items', []),
                         'content': item['text'],
