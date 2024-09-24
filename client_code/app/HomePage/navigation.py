@@ -112,8 +112,8 @@ class AppbarMenu:
             for k in item_obj.keys():
                 print(k, item_obj[k])
             print('TEMPLATE')
-            for k in item_obj.template.element.keys():
-                print(k, item_obj.template.element[k])
+            for k in item_obj.template.keys():
+                print(k, item_obj.template[k])
             item_obj.template.element.value = 'DASHBOARD'
             # self.handle_overflow()
 
