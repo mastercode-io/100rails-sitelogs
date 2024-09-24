@@ -205,47 +205,48 @@ class HomePage(HomePageTemplate):
             self.user_app_permissions['app_menu'])
         self.appbar_menu.menu_items = user_app_menu
         self.appbar_menu.show()
-        if ('settings_button' in self.user_app_permissions['special_menu']
-                and self.user_app_permissions['special_menu']['settings_button']['has_access']):
-            self.appbar_settings_button.appendTo(jQuery("#pl-appbar-settings-menu")[0])
-            self.appbar_settings_button.element.onclick = self.appbar_settings_button_click
-            settings_button_tooltip = ej.popups.Tooltip({
-                "content": "Payroll Settings",
-                "position": "BottomCenter",
-            })
-            settings_button_tooltip.appendTo(self.appbar_settings_button.element)
 
-        if ('assistant_button' in self.user_app_permissions['special_menu']
-                and self.user_app_permissions['special_menu']['assistant_button']['has_access']):
-            self.appbar_assistant_toggle.appendTo(jQuery("#pl-appbar-assistant-toggle")[0])
-            self.appbar_assistant_toggle.element.onclick = self.assistant.toggle
-            assistant_button_tooltip = ej.popups.Tooltip({
-                "content": "Ask Assistant",
-                "position": "BottomCenter",
-            })
-            assistant_button_tooltip.appendTo(self.appbar_assistant_toggle.element)
-
-        user_menu_items = []
-        user_menu_permissions = self.user_app_permissions['special_menu']['user_menu']['items']
-        for item in self.appbar_user_menu_items:
-            if item['id'] in user_menu_permissions and user_menu_permissions[item['id']]['has_access']:
-                user_menu_items.append(item)
-        self.appbar_user_menu = ej.splitbuttons.DropDownButton(
-            {
-                "cssClass": "e-inherit e-caret-hide pl-menu-font",
-                "iconCss": "fa-solid fa-user pl-appbar-menu-icon",
-                "items": user_menu_items,
-                "open": self.appbar_menu_popup_open,
-                "select": self.appbar_user_menu_select,
-                "beforeItemRender": self.appbar_user_menu_item_render,
-            }
-        )
-        self.appbar_user_menu.appendTo(jQuery("#pl-appbar-user-menu")[0])
-        user_menu_tooltip = ej.popups.Tooltip({
-            "content": "User Menu",
-            "position": "BottomCenter",
-        })
-        user_menu_tooltip.appendTo(self.appbar_user_menu.element)
+        # if ('settings_button' in self.user_app_permissions['special_menu']
+        #         and self.user_app_permissions['special_menu']['settings_button']['has_access']):
+        #     self.appbar_settings_button.appendTo(jQuery("#pl-appbar-settings-menu")[0])
+        #     self.appbar_settings_button.element.onclick = self.appbar_settings_button_click
+        #     settings_button_tooltip = ej.popups.Tooltip({
+        #         "content": "Payroll Settings",
+        #         "position": "BottomCenter",
+        #     })
+        #     settings_button_tooltip.appendTo(self.appbar_settings_button.element)
+        #
+        # if ('assistant_button' in self.user_app_permissions['special_menu']
+        #         and self.user_app_permissions['special_menu']['assistant_button']['has_access']):
+        #     self.appbar_assistant_toggle.appendTo(jQuery("#pl-appbar-assistant-toggle")[0])
+        #     self.appbar_assistant_toggle.element.onclick = self.assistant.toggle
+        #     assistant_button_tooltip = ej.popups.Tooltip({
+        #         "content": "Ask Assistant",
+        #         "position": "BottomCenter",
+        #     })
+        #     assistant_button_tooltip.appendTo(self.appbar_assistant_toggle.element)
+        #
+        # user_menu_items = []
+        # user_menu_permissions = self.user_app_permissions['special_menu']['user_menu']['items']
+        # for item in self.appbar_user_menu_items:
+        #     if item['id'] in user_menu_permissions and user_menu_permissions[item['id']]['has_access']:
+        #         user_menu_items.append(item)
+        # self.appbar_user_menu = ej.splitbuttons.DropDownButton(
+        #     {
+        #         "cssClass": "e-inherit e-caret-hide pl-menu-font",
+        #         "iconCss": "fa-solid fa-user pl-appbar-menu-icon",
+        #         "items": user_menu_items,
+        #         "open": self.appbar_menu_popup_open,
+        #         "select": self.appbar_user_menu_select,
+        #         "beforeItemRender": self.appbar_user_menu_item_render,
+        #     }
+        # )
+        # self.appbar_user_menu.appendTo(jQuery("#pl-appbar-user-menu")[0])
+        # user_menu_tooltip = ej.popups.Tooltip({
+        #     "content": "User Menu",
+        #     "position": "BottomCenter",
+        # })
+        # user_menu_tooltip.appendTo(self.appbar_user_menu.element)
 
         if not self.start_page:
             self.start_page = self.user_app_permissions['start_page']
