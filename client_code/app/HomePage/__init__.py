@@ -74,7 +74,7 @@ class HomePage(HomePageTemplate):
         #     content_id=self.content_id,
         # )
         self.appbar_menu = nav.AppbarMenu(
-            container_el="sl-appbar-menu",
+            container_el="sl-appbar-menu-left",
             target_el=".pl-page-container",
             container_id="pl-sidebar",
             content_id=self.content_id,
