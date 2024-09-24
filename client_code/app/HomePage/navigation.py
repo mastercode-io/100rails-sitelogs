@@ -72,7 +72,7 @@ class AppbarMenu:
                 user_menu_item = {
                     'id': item['id'],
                     'type': 'Input',
-                    'template': ej.splitbuttons.DropDownButton({
+                    'template': ej.navigations.ContextMenu({
                         'items': item.get('items', []),
                         'content': item['text'],
                         'select': self.menu_select,
@@ -114,17 +114,17 @@ class AppbarMenu:
             print('TEMPLATE')
             for k in item_obj.template.keys():
                 print(k, item_obj.template[k])
-            print('TEMPLATE')
-            for k in item_obj.template.keys():
-                print(k, item_obj.template[k])
-            print('Button')
-            for k in item_obj.template.button.keys():
-                print(k, item_obj.template.button[k])
-            print('dropDown')
-            for k in item_obj.template.dropDown.keys():
-                print(k, item_obj.template.dropDown[k])
-            item_obj.template.element.value = 'DASHBOARD'
-            item_obj.template.dropDown.content = ['DASHBOARD', 'TIMESHEETS', 'PAYRUNS']
+            # print('activeElem')
+            # for k in item_obj.template.activElem[0].keys():
+            #     print(k, item_obj.template.activElem[0][k])
+            # print('Button')
+            # for k in item_obj.template.button.keys():
+            #     print(k, item_obj.template.button[k])
+            # print('dropDown')
+            # for k in item_obj.template.dropDown.keys():
+            #     print(k, item_obj.template.dropDown[k])
+            # item_obj.template.element.value = 'DASHBOARD'
+            # item_obj.template.dropDown.content = ['DASHBOARD', 'TIMESHEETS', 'PAYRUNS']
             # self.handle_overflow()
 
     def menu_created(self, args):
