@@ -70,12 +70,13 @@ class AppbarMenu:
         for item in menu_items:
             if item['id'] in user_permissions and user_permissions[item['id']]['has_access']:
                 user_menu_item = {
+                    'id': item['id'],
                     'type': 'Input',
-                    'value': item['text'],
                     'template': ej.splitbuttons.DropDownButton({
                         'items': item.get('items', []),
                         'content': item['text'],
-                        'select': self.menu_select
+                        'select': self.menu_select,
+                        'created': self.menu_created,
                     })
                 }
                 user_menu_items.append(user_menu_item)
@@ -106,6 +107,10 @@ class AppbarMenu:
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
             # self.handle_overflow()
+
+    def menu_created(self, args):
+        print('Menu Created', args)
+        print(args.item)
 
 
     def handle_overflow(self):
