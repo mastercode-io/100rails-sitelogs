@@ -296,6 +296,7 @@ li.e-list-item.e-level-1.e-hover {
     padding-top: 11px;
     height: 100%;
     position: relative;
+    display: none;
     z-index: 1;
 }
 
