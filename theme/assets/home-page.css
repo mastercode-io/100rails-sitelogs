@@ -295,6 +295,8 @@ li.e-list-item.e-level-1.e-hover {
     grid-area: content;
     padding-top: 11px;
     height: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 #pl-content {
