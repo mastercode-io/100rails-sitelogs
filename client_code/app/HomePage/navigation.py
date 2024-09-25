@@ -71,14 +71,14 @@ class AppbarMenu:
             if item['id'] in user_permissions and user_permissions[item['id']]['has_access']:
                 user_menu_item = {
                     'id': item['id'],
-                    'type': 'Input',
+                    'type': 'Button',
                     'text': item['text'],
-                    'template': ej.splitbuttons.DropDownButton({
-                        'items': [ej.navigations.ContextMenu({'items': sub['items']}) if 'items' in sub else sub for sub in item.get('items', [])],
-                        'content': item['text'],
-                        'select': self.menu_select,
+                    # 'template': ej.splitbuttons.DropDownButton({
+                    #     'items': [ej.navigations.ContextMenu({'items': sub['items']}) if 'items' in sub else sub for sub in item.get('items', [])],
+                    #     'content': item['text'],
+                    #     'select': self.menu_select,
                         # 'created': self.menu_created,
-                    })
+                    # })
                 }
                 user_menu_items.append(user_menu_item)
                 print(item['id'], item.get('items', []))
@@ -101,10 +101,10 @@ class AppbarMenu:
             # })
             self.menu = ej.navigations.Toolbar({
                 # 'cssClass': 'e-inherit pl-appbar-menu',
-                'cssClass': 'e-inherit rounded-box pl-appbar-menu',
+                'cssClass': 'e-inherit pl-appbar-menu',
                 'items': self.menu_items,
                 # 'clicked': self.menu_select,
-                'width': 300,
+                'width': 500,
                 'overflowMode': 'Popup',
                 # 'enableScrolling': True
             })
