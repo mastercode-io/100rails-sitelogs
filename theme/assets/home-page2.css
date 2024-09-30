@@ -31,41 +31,9 @@ body {
     z-index: 1000; /* Adjust as needed */
 }
 
-#pl-app-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 35px auto 25px;
-    grid-template-areas: "appbar"
-        "content"
-        "footer";
-    height: 100vh;
-    width: 100vw;
-    padding: 0;
-    margin: 0;
-}
-
 .pl-menu-font {
     font-size: 13px !important;
 }
-
-#pl-appbar {
-    grid-area: appbar;
-    background-color: #005ca5;
-    display: flex;
-    align-items: center;
-}
-
-/* #pl-appbar-menu {
-    font-size: 14px !important;
-    background-color: #272D83;
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    justify-content: center;
-    padding-block: .5em;
-} */
 
 .e-appbar-separator {
     padding-left: 4px;
