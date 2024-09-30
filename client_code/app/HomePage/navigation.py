@@ -77,7 +77,7 @@ class AppbarMenu:
                     #     'items': [ej.navigations.ContextMenu({'items': sub['items']}) if 'items' in sub else sub for sub in item.get('items', [])],
                     #     'content': item['text'],
                     #     'select': self.menu_select,
-                        # 'created': self.menu_created,
+                    # 'created': self.menu_created,
                     # })
                 }
                 user_menu_items.append(user_menu_item)
@@ -87,6 +87,20 @@ class AppbarMenu:
 
     def show(self):
         print('AppBar Show')
+
+        tem_items = [
+            {'type': 'Button', 'prefixIcon': 'e-cut-icon', 'text': 'Cut', 'overflow': 'Show'},
+            {'type': 'Button', 'prefixIcon': 'e-copy-icon', 'text': 'Copy', 'overflow': 'Show'},
+            {'type': 'Button', 'prefixIcon': 'e-paste-icon', 'text': 'Paste', 'overflow': 'Show'},
+            {'type': 'Separator'},
+            {'type': 'Button', 'prefixIcon': 'e-bold-icon', 'text': 'Bold'},
+            {'type': 'Button', 'prefixIcon': 'e-italic-icon', 'text': 'Italic'},
+            {'type': 'Button', 'prefixIcon': 'e-underline-icon', 'text': 'Underline'},
+            {'type': 'Separator'},
+            {'type': 'Button', 'prefixIcon': 'e-ascending-icon', 'text': 'A-Z Sort', 'overflow': 'Show'},
+            {'type': 'Button', 'prefixIcon': 'e-descending-icon', 'text': 'Z-A Sort', 'overflow': 'Show'},
+        ]
+
         if self.menu:
             self.menu.items = self.menu_items
         else:
@@ -102,21 +116,22 @@ class AppbarMenu:
             self.menu = ej.navigations.Toolbar({
                 # 'cssClass': 'e-inherit pl-appbar-menu',
                 'cssClass': 'e-inherit pl-appbar-menu',
-                'items': self.menu_items,
+                # 'items': self.menu_items,
+                'items': tem_items,
                 # 'clicked': self.menu_select,
-                'width': 500,
+                'width': 300,
                 'overflowMode': 'Popup',
                 # 'enableScrolling': True
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
             # for item, option in zip(self.menu.items, self.menu_items):
             #     item.template.element.value = option['text']
-                # item.template = ej.splitbuttons.DropDownButton({
-                #     'items': [ej.navigations.ContextMenu({'items': sub['items']}) if 'items' in sub else sub for sub in option.get('items', [])],
-                #     'content': option['text'],
-                #     'select': self.menu_select,
-                #     # 'created': self.menu_created,
-                # })
+            # item.template = ej.splitbuttons.DropDownButton({
+            #     'items': [ej.navigations.ContextMenu({'items': sub['items']}) if 'items' in sub else sub for sub in option.get('items', [])],
+            #     'content': option['text'],
+            #     'select': self.menu_select,
+            #     # 'created': self.menu_created,
+            # })
             # item_obj = self.menu.items[0]
             # print('IETM OBJ')
             # for k in item_obj.keys():
@@ -136,6 +151,7 @@ class AppbarMenu:
             # item_obj.template.element.value = 'DASHBOARD'
             # item_obj.template.dropDown.content = ['DASHBOARD', 'TIMESHEETS', 'PAYRUNS']
             # self.handle_overflow()
+
 
     def menu_created(self, args):
         print('Menu Created', args)
