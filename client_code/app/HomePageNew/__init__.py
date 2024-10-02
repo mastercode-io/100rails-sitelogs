@@ -1,4 +1,6 @@
 import time
+
+
 stime = time.time()
 
 from ._anvil_designer import HomePageNewTemplate
@@ -13,7 +15,7 @@ from .. import models
 from ... import Forms
 from ... import Views
 from ... import Pages
-from . import navigation as nav
+import nav
 
 
 print('HomePage IMPORT', time.time() - stime)
