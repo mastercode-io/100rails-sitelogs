@@ -58,4 +58,9 @@ class HomePageNew(HomePageNewTemplate):
             menu_items={},
             nav_items=nav.PL_NAV_ITEMS,
         )
-        self.appbar_menu_left.show()
+
+
+    def form_show(self, **event_args):
+        if self.firs_load:
+            self.firs_load = False
+            self.appbar_menu_left.show()
