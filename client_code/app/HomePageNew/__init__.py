@@ -13,7 +13,7 @@ from .. import models
 from ... import Forms
 from ... import Views
 from ... import Pages
-import navigation as nav
+from . import navigation as nav
 
 
 print('HomePage IMPORT', time.time() - stime)
