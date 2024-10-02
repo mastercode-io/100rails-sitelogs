@@ -46,7 +46,7 @@ class AppbarMenu:
                  menu_items,
                  nav_items,
                  target_el,
-                 container_id,
+                 # container_id,
                  content_id,
                  ):
         self.container_el = container_el
