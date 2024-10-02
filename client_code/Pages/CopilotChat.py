@@ -23,10 +23,10 @@ class CopilotChat:
                 <div id="{self.el_id_prefix}-assistant-chat" style="height: 90%;"><div>
             </div>
         '''
-        self.chat = jQuery(f"#{self.el_id_prefix}-assistant-chat").kendoChat({
-            'post': self.chat_post,
-            'height': '85%',
-        }).data('kendoChat')
+        # self.chat = jQuery(f"#{self.el_id_prefix}-assistant-chat").kendoChat({
+        #     'post': self.chat_post,
+        #     'height': '85%',
+        # }).data('kendoChat')
         # self.chat.renderUserTypingIndicator()
 
 
