@@ -1,5 +1,5 @@
 from AnvilFusion.features.developer.MigratePage import MigratePage
-from ..tools.RunScriptPage import RunScriptPage
+# from ..tools.RunScriptPage import RunScriptPage
 
 
 # App menu item list
@@ -194,10 +194,11 @@ PL_NAV_ITEMS = {
     'developer_views': {'model': 'AppGridView', 'type': 'view', 'action': 'open', 'props': {}},
     'developer_enums': {'model': 'AppEnum', 'type': 'view', 'action': 'open', 'props': {}},
     'developer_migrate': {'type': 'page', 'page': MigratePage, 'props': {}},
-    'developer_run_script': {'type': 'page', 'page': RunScriptPage, 'props': {}},
+    # 'developer_run_script': {'type': 'page', 'page': RunScriptPage, 'props': {}},
     'developer_tenant_form': {'type': 'form', 'class': 'SettingsForm', 'props': {}},
     'developer_tree_grid': {'type': 'page', 'name': 'TreeGridPage', 'props': {}},
 }
+
 
 PL_DEFAULT_NAV_ITEMS = {
     'payroll_menu': 'payroll_dashboard',
