@@ -51,10 +51,11 @@ class HomePageNew(HomePageNewTemplate):
         self.start_page = props.get('start_page', None)
         self.start_props = props.get('start_props', {})
 
-        self.appbar_menu = nav.AppbarMenu(
+        self.appbar_menu_left = nav.AppbarMenu(
             container_el="sl-appbar-menu-left",
             target_el=".sl-page-container",
             content_id=self.content_id,
             menu_items={},
             nav_items=nav.PL_NAV_ITEMS,
         )
+        self.appbar_menu_left.show()
