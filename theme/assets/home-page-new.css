@@ -23,6 +23,9 @@ body {
     /*align-items: center;*/
     padding: 4px 10px;
 }
+#sl-appbar-menu-right {
+    margin-left: auto;
+}
 
 /* Main page container */
 #sl-page-container {
