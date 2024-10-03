@@ -19,10 +19,9 @@ body {
 }
 #sl-appbar-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /*justify-content: center;*/
+    /*align-items: center;*/
     padding: 4px 10px;
-
 }
 
 /* Main page container */
