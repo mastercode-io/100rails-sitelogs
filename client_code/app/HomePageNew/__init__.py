@@ -61,9 +61,21 @@ class HomePageNew(HomePageNewTemplate):
         )
 
         right_menu_items = [
-            {'prefixIcon': 'fa-solid fa-comments sl-appbar-menu-icon', 'id': 'assistant'},
-            {'prefixIcon': 'fa-solid fa-bell sl-appbar-menu-icon', 'id': 'notifications'},
-            {'prefixIcon': 'fa-solid fa-user sl-appbar-menu-icon', 'id': 'user_menu'},
+            {
+                'prefixIcon': '',
+                'cssClass': 'fa-solid fa-comments sl-appbar-menu-icon',
+                'id': 'assistant',
+            },
+            {
+                'prefixIcon': '',
+                'cssClass': 'fa-solid fa-bell sl-appbar-menu-icon',
+                'id': 'notifications',
+            },
+            {
+                'prefixIcon': '',
+                'cssClass': 'fa-solid fa-user sl-appbar-menu-icon',
+                'id': 'user_menu',
+            },
         ]
 
         self.appbar_menu_right = nav.AppbarMenu(
