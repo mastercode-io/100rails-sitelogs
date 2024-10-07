@@ -97,7 +97,7 @@ class HomePageNew(HomePageNewTemplate):
             print('appbar_menu_left_el', appbar_menu_left_el.getBoundingClientRect().width)
             print('appbar_menu_left_el', appbar_menu_left_el.offsetWidth)
             print('appbar_menu_left_el', appbar_menu_left_el.clientWidth)
-            appbar_menu_left_el.style.width = f'{appbar_menu_left_width}px'
-            appbar_menu_left_el.style.maxWidth = f'{appbar_menu_left_width}px'
-            self.appbar_menu_left.width = appbar_menu_left_width
-            self.appbar_menu_left.show()
+            # appbar_menu_left_el.style.width = f'{appbar_menu_left_width}px'
+            # appbar_menu_left_el.style.maxWidth = f'{appbar_menu_left_width}px'
+            # self.appbar_menu_left.width = appbar_menu_left_width
+            # self.appbar_menu_left.show()
