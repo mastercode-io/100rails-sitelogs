@@ -1,59 +1,6 @@
-from AnvilFusion.features.developer.MigratePage import MigratePage
-from ..tools.RunScriptPage import RunScriptPage
+# Description: Application menu and permissions schema
 
-
-# App menu item list
-PL_MENU_ITEMS_OLD = {
-    'payroll_menu': [
-        {'id': 'payroll_dashboard', 'text': 'Dashboard', 'items': []},
-        {'id': 'payroll_payruns', 'text': 'Payruns', 'items': []},
-        {'id': 'payroll_timesheets', 'text': 'Timesheets', 'items': []},
-        {'id': 'payroll_transfer_data', 'text': 'Transfer Data', 'items': []},
-    ],
-    'directory_menu': [
-        {'id': 'directory_employees', 'text': 'Employees', 'items': []},
-        {'id': 'directory_locations', 'text': 'Locations', 'items': []},
-        {'id': 'directory_jobs', 'text': 'Jobs', 'items': []},
-        {'id': 'directory_job_types', 'text': 'Job Types', 'items': []},
-        {'id': 'directory_employee_roles', 'text': 'Employee Roles', 'items': []},
-        {'id': 'directory_timesheet_types', 'text': 'Timesheet Types', 'items': []},
-    ],
-    'admin_menu': [
-        {'id': 'admin_accounts', 'text': 'Accounts', 'items': []},
-        {'id': 'admin_tenants', 'text': 'Tenants', 'items': []},
-        {'id': 'admin_user_roles', 'text': 'User Roles', 'items': []},
-        {'id': 'admin_permissions', 'text': 'Permissions', 'items': []},
-        {'id': 'admin_pay_rules', 'text': 'Pay Rules', 'items': []},
-        {'id': 'admin_pay_templates', 'text': 'Pay Templates', 'items': []},
-        {'id': 'admin_settings', 'text': 'Settings', 'items': [
-            {'id': 'admin_settings_scope_types', 'text': 'Scope Types', 'items': []},
-        ]},
-        {'id': 'admin_integrations', 'text': 'Integrations', 'items': []},
-    ],
-    'developer_menu': [
-        {'id': 'developer_components', 'text': 'Components', 'items': [
-            {'id': 'developer_views', 'text': 'Views', 'items': []},
-            {'id': 'developer_pages', 'text': 'Pages', 'items': []},
-            {'id': 'developer_forms', 'text': 'Forms', 'items': []},
-        ]},
-        {'id': 'developer_schema', 'text': 'App Schema', 'items': [
-            {'id': 'developer_enums', 'text': 'Enumerations', 'items': []},
-            {'id': 'developer_models', 'text': 'Models', 'items': []},
-            {'id': 'developer_migrate', 'text': 'Migrate DB', 'items': []},
-        ]},
-        {'id': 'developer_tools', 'text': 'Tools', 'items': [
-            {'id': 'developer_import', 'text': 'Import Data', 'items': []},
-            {'id': 'developer_export', 'text': 'Export Data', 'items': []},
-            {'id': 'developer_run_script', 'text': 'Run Script', 'items': []},
-        ]},
-        {'id': 'developer_prototype', 'text': 'Prototype', 'items': [
-            {'id': 'developer_tenant_form', 'text': 'Tenant Form', 'items': []},
-            {'id': 'developer_tree_grid', 'text': 'Tree Grid View', 'items': []},
-        ]},
-    ]
-}
-
-PL_MENU_ITEMS = [
+SL_MENU_ITEMS = [
     {'id': 'dashboard_menu', 'text': 'DASHBOARD', 'items': [
         {'id': 'dashboard_overview', 'text': 'Overview', 'items': []},
         {'id': 'dashboard_metrics', 'text': 'Metrics', 'items': []},
@@ -161,7 +108,7 @@ PL_MENU_ITEMS = [
     ]},
 ]
 # Navigation items/actions
-PL_NAV_ITEMS = {
+SL_NAV_ITEMS = {
     'payroll_dashboard': {'name': 'CompanyDashboardPage', 'type': 'page', 'action': 'open', 'props': {}},
     'payroll_payruns': {'model': 'Payrun', 'type': 'view', 'action': 'open', 'props': {}},
     'payroll_timesheets': {'class': 'TimesheetView', 'type': 'custom', 'action': 'open', 'props': {}},
@@ -193,13 +140,14 @@ PL_NAV_ITEMS = {
 
     'developer_views': {'model': 'AppGridView', 'type': 'view', 'action': 'open', 'props': {}},
     'developer_enums': {'model': 'AppEnum', 'type': 'view', 'action': 'open', 'props': {}},
-    'developer_migrate': {'type': 'page', 'page': MigratePage, 'props': {}},
-    'developer_run_script': {'type': 'page', 'page': RunScriptPage, 'props': {}},
+    # 'developer_migrate': {'type': 'page', 'page': MigratePage, 'props': {}},
+    # 'developer_run_script': {'type': 'page', 'page': RunScriptPage, 'props': {}},
     'developer_tenant_form': {'type': 'form', 'class': 'SettingsForm', 'props': {}},
     'developer_tree_grid': {'type': 'page', 'name': 'TreeGridPage', 'props': {}},
 }
 
-PL_DEFAULT_NAV_ITEMS = {
+
+SL_DEFAULT_NAV_ITEMS = {
     'payroll_menu': 'payroll_dashboard',
     'directory_menu': 'directory_employees',
     'settings_menu': 'settings_users',
@@ -207,14 +155,6 @@ PL_DEFAULT_NAV_ITEMS = {
     'developer_menu': 'developer_views',
 }
 
-# Appbar main menu
-# PL_APPBAR_MENU_ADMIN = [
-#     {'separator': True},
-#     {'id': 'admin_menu', 'text': 'ADMIN', 'items': PL_MENU_ITEMS['admin_menu']},
-# ]
-# PL_APPBAR_MENU_DEVELOPER = [
-#     {'id': 'developer_menu', 'text': 'DEVELOPER', 'items': PL_MENU_ITEMS['developer_menu']},
-# ]
 
 DEFAULT_USER_PERMISSIONS = {
     'user_roles': {

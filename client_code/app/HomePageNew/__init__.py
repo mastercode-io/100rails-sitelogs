@@ -16,6 +16,7 @@ from ... import Forms
 from ... import Views
 from ... import Pages
 import nav
+import schema
 
 
 print('HomePage IMPORT', time.time() - stime)
@@ -55,8 +56,8 @@ class HomePageNew(HomePageNewTemplate):
             container_el="sl-appbar-menu-left",
             target_el=".sl-page-container",
             content_id=self.content_id,
-            menu_items={},
-            nav_items=nav.PL_NAV_ITEMS,
+            menu_items=schema.SL_MENU_ITEMS,
+            nav_items=schema.SL_NAV_ITEMS,
         )
 
         right_menu_items = [
@@ -70,7 +71,7 @@ class HomePageNew(HomePageNewTemplate):
             target_el=".sl-page-container",
             content_id=self.content_id,
             menu_items=right_menu_items,
-            # nav_items=right_menu_items,
+            nav_items=schema.SL_NAV_ITEMS,
         )
 
 
@@ -78,3 +79,4 @@ class HomePageNew(HomePageNewTemplate):
         if self.firs_load:
             self.firs_load = False
             self.appbar_menu_left.show()
+            self.appbar_menu_right.show()
