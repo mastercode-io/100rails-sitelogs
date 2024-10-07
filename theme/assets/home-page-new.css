@@ -28,6 +28,7 @@ body {
 }
 #sl-appbar-menu-left {
     flex: 1 1 auto;
+    max-width: calc(100vw - 200px - 50px);
 }
 #sl-appbar-menu-right {
     flex: 0 0 200px;
