@@ -79,7 +79,7 @@ class HomePageNew(HomePageNewTemplate):
         if self.firs_load:
             self.firs_load = False
             self.appbar_menu_right.show()
-            time.sleep(0.1)
+            time.sleep(0.5)
 
             appbar_logo_el = anvil.js.window.document.getElementById('sl-appbar-logo')
             appbar_spacer_el = anvil.js.window.document.getElementById('sl-appbar-spacer')
