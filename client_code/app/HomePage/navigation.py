@@ -42,30 +42,34 @@ PL_ASSISTANT_WIDTH = 300
 # Appbar navigation class
 class AppbarMenu:
     def __init__(self,
-                 container_el,
-                 menu_items,
-                 nav_items,
-                 target_el,
-                 container_id,
-                 content_id,
+                 app_menu=None,
+                 permissions=None,
+                 menu_items=None,
+                 nav_items=None,
+                 target_el=None,
+                 container_el=None,
+                 container_id=None,
+                 content_id=None,
                  ):
-        self.container_el = container_el
-        # self.sidebar = sidebar
+        self.app_menu = app_menu
+        self.permissions = permissions
         self.menu_items = menu_items
         self.nav_items = nav_items
-        self.selected_el = None
-        self.menu = None
+        self.container_el = container_el
         self.target_el = target_el
         self.container_id = container_id
         self.content_id = content_id
+        self.menu = None
+        self.selected_el = None
         self.nav_target_id = None
         self.content_control = None
-        # self.control = None
-        # self.menu = None
-        # self.open = True
+
+        if self.menu_items is None:
+            self.menu_items = self.get_user_menu_items(self.app_menu, self.permissions)
 
 
-    def get_user_menu_items(self, menu_items: list, user_permissions: dict):
+    @staticmethod
+    def get_user_menu_items(menu_items: list, user_permissions: dict):
         user_menu_items = []
         for item in menu_items:
             if item['id'] in user_permissions and user_permissions[item['id']]['has_access']:
@@ -117,7 +121,7 @@ class AppbarMenu:
                 # 'cssClass': 'e-inherit pl-appbar-menu',
                 'cssClass': 'e-inherit pl-appbar-menu',
                 # 'items': self.menu_items,
-                'items': tem_items,
+                'items': self.menu_items,
                 # 'clicked': self.menu_select,
                 'width': 300,
                 'overflowMode': 'Popup',

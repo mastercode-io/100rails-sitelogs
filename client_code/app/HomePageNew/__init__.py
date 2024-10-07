@@ -59,6 +59,20 @@ class HomePageNew(HomePageNewTemplate):
             nav_items=nav.PL_NAV_ITEMS,
         )
 
+        right_menu_items = [
+            {'prefixIcon': 'fa-solid fa-comments sl-appbar-menu-icon', 'id': 'assistant'},
+            {'prefixIcon': 'fa-solid fa-bell sl-appbar-menu-icon', 'id': 'notifications'},
+            {'prefixIcon': 'fa-solid fa-user sl-appbar-menu-icon', 'id': 'user_menu'},
+        ]
+
+        self.appbar_menu_right = nav.AppbarMenu(
+            container_el="sl-appbar-menu-right",
+            target_el=".sl-page-container",
+            content_id=self.content_id,
+            menu_items=right_menu_items,
+            # nav_items=right_menu_items,
+        )
+
 
     def form_show(self, **event_args):
         if self.firs_load:

@@ -26,6 +26,12 @@ body {
 #sl-appbar-menu-right {
     margin-left: auto;
 }
+.sl-appbar-menu-icon {
+    font-size: 18px !important;
+}
+.sl-appbar-menu-icon:hover {
+    cursor: pointer;
+}
 
 /* Main page container */
 #sl-page-container {

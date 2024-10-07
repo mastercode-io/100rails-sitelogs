@@ -42,30 +42,34 @@ PL_ASSISTANT_WIDTH = 300
 # Appbar navigation class
 class AppbarMenu:
     def __init__(self,
-                 container_el,
-                 menu_items,
-                 nav_items,
-                 target_el,
-                 # container_id,
-                 content_id,
+                 app_menu=None,
+                 permissions=None,
+                 menu_items=None,
+                 nav_items=None,
+                 target_el=None,
+                 container_el=None,
+                 container_id=None,
+                 content_id=None,
                  ):
-        self.container_el = container_el
-        # self.sidebar = sidebar
+        self.app_menu = app_menu
+        self.permissions = permissions
         self.menu_items = menu_items
         self.nav_items = nav_items
-        self.selected_el = None
-        self.menu = None
+        self.container_el = container_el
         self.target_el = target_el
-        # self.container_id = container_id
+        self.container_id = container_id
         self.content_id = content_id
+        self.menu = None
+        self.selected_el = None
         self.nav_target_id = None
         self.content_control = None
-        # self.control = None
-        # self.menu = None
-        # self.open = True
+
+        if self.menu_items is None:
+            self.menu_items = self.get_user_menu_items(self.app_menu, self.permissions)
 
 
-    def get_user_menu_items(self, menu_items: list, user_permissions: dict):
+    @staticmethod
+    def get_user_menu_items(menu_items: list, user_permissions: dict):
         user_menu_items = []
         for item in menu_items:
             if item['id'] in user_permissions and user_permissions[item['id']]['has_access']:
@@ -117,70 +121,13 @@ class AppbarMenu:
                 # 'cssClass': 'e-inherit pl-appbar-menu',
                 'cssClass': 'e-inherit sl-appbar-menu',
                 # 'items': self.menu_items,
-                'items': tem_items,
+                'items': self.menu_items,
                 # 'clicked': self.menu_select,
                 'width': 300,
                 'overflowMode': 'Popup',
                 # 'enableScrolling': True
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
-            # for item, option in zip(self.menu.items, self.menu_items):
-            #     item.template.element.value = option['text']
-            # item.template = ej.splitbuttons.DropDownButton({
-            #     'items': [ej.navigations.ContextMenu({'items': sub['items']}) if 'items' in sub else sub for sub in option.get('items', [])],
-            #     'content': option['text'],
-            #     'select': self.menu_select,
-            #     # 'created': self.menu_created,
-            # })
-            # item_obj = self.menu.items[0]
-            # print('IETM OBJ')
-            # for k in item_obj.keys():
-            #     print(k, item_obj[k])
-            # print('TEMPLATE')
-            # for k in item_obj.template.keys():
-            #     print(k, item_obj.template[k])
-            # print('activeElem')
-            # for k in item_obj.template.activElem[0].keys():
-            #     print(k, item_obj.template.activElem[0][k])
-            # print('Button')
-            # for k in item_obj.template.button.keys():
-            #     print(k, item_obj.template.button[k])
-            # print('dropDown')
-            # for k in item_obj.template.dropDown.keys():
-            #     print(k, item_obj.template.dropDown[k])
-            # item_obj.template.element.value = 'DASHBOARD'
-            # item_obj.template.dropDown.content = ['DASHBOARD', 'TIMESHEETS', 'PAYRUNS']
-            # self.handle_overflow()
-
-
-    def menu_created(self, args):
-        print('Menu Created', args)
-        # print(args.item)
-
-
-    def handle_overflow(self):
-        menu_container = jQuery(f"#{self.container_el}")[0]
-        menu_items = menu_container.children
-        total_width = menu_container.clientWidth
-        current_width = 0
-        overflow_items = []
-
-        for item in menu_items:
-            item_width = item.offsetWidth
-            if current_width + item_width > total_width:
-                overflow_items.append(item)
-            else:
-                current_width += item_width
-
-        if overflow_items:
-            menu_ellipsis = jQuery('<li class="sl-menu-item sl-menu-ellipsis">...</li>')[0]
-            dropdown = jQuery('<ul class="sl-menu-dropdown"></ul>')[0]
-            for item in overflow_items:
-                dropdown.appendChild(item)
-            menu_ellipsis.appendChild(dropdown)
-            menu_container.appendChild(menu_ellipsis)
-
-            jQuery(menu_ellipsis).on('click', lambda e: jQuery(dropdown).toggleClass('show'))
 
 
     def menu_select(self, args):
