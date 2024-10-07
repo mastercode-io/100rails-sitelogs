@@ -83,6 +83,9 @@ class HomePageNew(HomePageNewTemplate):
             appbar_logo_el = anvil.js.window.document.getElementById('sl-appbar-logo')
             appbar_spacer_el = anvil.js.window.document.getElementById('sl-appbar-spacer')
             appbar_menu_right_el = anvil.js.window.document.getElementById('sl-appbar-menu-right')
+            print('appbar_logo_el', appbar_logo_el.offsetWidth)
+            print('appbar_spacer_el', appbar_spacer_el.offsetWidth)
+            print('appbar_menu_right_el', appbar_menu_right_el.offsetWidth)
             appbar_menu_left_width = (anvil.js.window.innerWidth - appbar_logo_el.offsetWidth -
                                       appbar_menu_right_el.offsetWidth - appbar_spacer_el.offsetWidth - 100)
             print('appbar_menu_left_width', appbar_menu_left_width)
