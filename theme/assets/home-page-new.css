@@ -30,7 +30,7 @@ body {
     flex: 1 1 auto;
 }
 #sl-appbar-menu-right {
-    flex: 0 0 200px;
+    flex: 0 0 auto;
 }
 #sl-appbar-spacer {
     flex: 0 1 50px;
