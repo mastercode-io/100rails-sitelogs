@@ -62,7 +62,7 @@ class HomePageNew(HomePageNewTemplate):
 
         right_menu_items = [
             {
-                'prefixIcon': '',
+                'prefixIcon': 'fa-comments',
                 'cssClass': 'fa-solid fa-comments sl-appbar-menu-icon',
                 'id': 'assistant',
             },
