@@ -92,19 +92,6 @@ class AppbarMenu:
     def show(self):
         print('AppBar Show')
 
-        tem_items = [
-            {'type': 'Button', 'prefixIcon': 'e-cut-icon', 'text': 'Cut', 'overflow': 'Show'},
-            {'type': 'Button', 'prefixIcon': 'e-copy-icon', 'text': 'Copy', 'overflow': 'Show'},
-            {'type': 'Button', 'prefixIcon': 'e-paste-icon', 'text': 'Paste', 'overflow': 'Show'},
-            {'type': 'Separator'},
-            {'type': 'Button', 'prefixIcon': 'e-bold-icon', 'text': 'Bold'},
-            {'type': 'Button', 'prefixIcon': 'e-italic-icon', 'text': 'Italic'},
-            {'type': 'Button', 'prefixIcon': 'e-underline-icon', 'text': 'Underline'},
-            {'type': 'Separator'},
-            {'type': 'Button', 'prefixIcon': 'e-ascending-icon', 'text': 'A-Z Sort', 'overflow': 'Show'},
-            {'type': 'Button', 'prefixIcon': 'e-descending-icon', 'text': 'Z-A Sort', 'overflow': 'Show'},
-        ]
-
         if self.menu:
             self.menu.items = self.menu_items
         else:
@@ -123,7 +110,7 @@ class AppbarMenu:
                 # 'items': self.menu_items,
                 'items': self.menu_items,
                 # 'clicked': self.menu_select,
-                'width': 300,
+                # 'width': 300,
                 'overflowMode': 'Popup',
                 # 'enableScrolling': True
             })
