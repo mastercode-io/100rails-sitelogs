@@ -33,7 +33,7 @@ body {
     flex: 0 0 200px;
 }
 #sl-appbar-spacer {
-    flex: 0 1 auto;
+    flex: 0 1 50px;
 }
 .sl-appbar-menu-icon {
     font-size: 18px !important;
