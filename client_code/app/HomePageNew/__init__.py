@@ -78,5 +78,12 @@ class HomePageNew(HomePageNewTemplate):
     def form_show(self, **event_args):
         if self.firs_load:
             self.firs_load = False
-            self.appbar_menu_left.show()
             self.appbar_menu_right.show()
+
+            appbar_logo_el = anvil.js.document.querySelector('.sl-appbar-logo')
+            appbar_spacer_el = anvil.js.document.querySelector('.sl-appbar-menu-spacer')
+            appbar_menu_right_el = anvil.js.document.querySelector('.sl-appbar-menu-right')
+            appbar_menu_left_width = (anvil.js.window.innerWidth - appbar_logo_el - appbar_menu_right_el.offsetWidth -
+                                      appbar_spacer_el.offsetWidth - 20)
+            self.appbar_menu_left.width = appbar_menu_left_width
+            self.appbar_menu_left.show()

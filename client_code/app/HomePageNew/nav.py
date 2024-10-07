@@ -46,8 +46,9 @@ class AppbarMenu:
                  permissions=None,
                  menu_items=None,
                  nav_items=None,
-                 target_el=None,
+                 width='auto',
                  container_el=None,
+                 target_el=None,
                  container_id=None,
                  content_id=None,
                  ):
@@ -59,6 +60,7 @@ class AppbarMenu:
         self.target_el = target_el
         self.container_id = container_id
         self.content_id = content_id
+        self.width = width
         self.menu = None
         self.selected_el = None
         self.nav_target_id = None
@@ -110,7 +112,7 @@ class AppbarMenu:
                 # 'items': self.menu_items,
                 'items': self.menu_items,
                 # 'clicked': self.menu_select,
-                # 'width': 300,
+                'width': self.width,
                 'overflowMode': 'Popup',
                 # 'enableScrolling': True
             })
