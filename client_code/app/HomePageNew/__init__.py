@@ -80,9 +80,9 @@ class HomePageNew(HomePageNewTemplate):
             self.firs_load = False
             self.appbar_menu_right.show()
 
-            appbar_logo_el = anvil.js.window.document.querySelector('sl-appbar-logo')
-            appbar_spacer_el = anvil.js.window.document.querySelector('sl-appbar-menu-spacer')
-            appbar_menu_right_el = anvil.js.window.document.querySelector('sl-appbar-menu-right')
+            appbar_logo_el = anvil.js.window.document.getElementById('sl-appbar-logo')
+            appbar_spacer_el = anvil.js.window.document.getElementById('sl-appbar-menu-spacer')
+            appbar_menu_right_el = anvil.js.window.document.getElementById('sl-appbar-menu-right')
             appbar_menu_left_width = (anvil.js.window.innerWidth - appbar_logo_el.offsetWidth -
                                       appbar_menu_right_el.offsetWidth - appbar_spacer_el.offsetWidth - 20)
             self.appbar_menu_left.width = appbar_menu_left_width
