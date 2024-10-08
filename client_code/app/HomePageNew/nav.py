@@ -160,7 +160,7 @@ class AppbarMenu:
         print('close submenu')
         for k in args.keys():
             print(k, args[k])
-        if self.submenu:
+        if 'event' in args.keys() and self.submenu:
             self.submenu.close()
             self.submenu.destroy()
             self.submenu = None
