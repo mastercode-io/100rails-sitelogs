@@ -116,7 +116,7 @@ class AppbarMenu:
                 'width': self.width,
                 'overflowMode': 'Popup',
                 'created': self.on_created,
-                'clicked': self.menu_select,
+                'clicked': self.show_submenu,
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
 
