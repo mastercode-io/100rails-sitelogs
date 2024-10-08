@@ -42,7 +42,7 @@ AppEnv.start_menu = "timesheet_menu"
 
 
 def on_element_rendered(element_id, callback):
-    mutation_observer = anvil.js.get_dom_node(anvil.js.window.MutationObserver)
+    mutation_observer = anvil.js.new(anvil.js.window.MutationObserver)
 
 
     def observer_callback(mutations, observer_obj):
