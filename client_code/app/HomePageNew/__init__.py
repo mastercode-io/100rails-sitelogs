@@ -121,7 +121,7 @@ class HomePageNew(HomePageNewTemplate):
 
     def show_menu_left(self, args):
         # self.appbar_menu_right.show()
-        # time.sleep(0.5)
+        time.sleep(0.5)
 
         appbar_logo_el = anvil.js.window.document.getElementById('sl-appbar-logo')
         appbar_spacer_el = anvil.js.window.document.getElementById('sl-appbar-spacer')
