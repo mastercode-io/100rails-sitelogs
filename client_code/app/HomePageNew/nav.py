@@ -116,8 +116,25 @@ class AppbarMenu:
                 'width': self.width,
                 'overflowMode': 'Popup',
                 'created': self.on_created,
+                'clicked': self.menu_select,
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
+
+
+    def show_submenu(self, args):
+        subitems = [
+            {'id': 'sub1', 'text': 'Submenu 1'},
+            {'id': 'sub2', 'text': 'Submenu 2'},
+            {'id': 'sub3', 'text': 'Submenu 3'},
+        ]
+        print('show submenu', args)
+        for k in args.keys():
+            print(k, args[k])
+        submenu = ej.navigations.ContextMenu({
+            'items': subitems,
+            # 'select': self.menu_select,
+        }, '#sl-appbar-menu-left-submenu')
+        submenu.open()
 
 
     def menu_select(self, args):

@@ -86,6 +86,7 @@ class HomePageNew(HomePageNewTemplate):
             menu_items=right_menu_items,
             nav_items=schema.SL_NAV_ITEMS,
             on_created=self.show_menu_left,
+
         )
 
 
@@ -100,6 +101,5 @@ class HomePageNew(HomePageNewTemplate):
         appbar_menu_left_width = anvil.js.window.innerWidth
         for el in ('sl-appbar-logo', 'sl-appbar-spacer', 'sl-appbar-menu-right'):
             appbar_menu_left_width -= anvil.js.window.document.getElementById(el).getBoundingClientRect().width
-        print('appbar_menu_left_width', appbar_menu_left_width)
         self.appbar_menu_left.width = appbar_menu_left_width
         self.appbar_menu_left.show()
