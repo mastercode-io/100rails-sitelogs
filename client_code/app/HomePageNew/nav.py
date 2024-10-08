@@ -143,7 +143,7 @@ class AppbarMenu:
         self.submenu = ej.navigations.ContextMenu({
             'items': subitems,
             'select': self.close_submenu,
-        }, '#sl-appbar-menu-left-submenu')
+        }, '#sl-appbar-submenu')
         self.submenu.open(rect.bottom, rect.left)
 
         def close_on_click_outside(event):
@@ -160,7 +160,9 @@ class AppbarMenu:
         print('close submenu')
         for k in args.keys():
             print(k, args[k])
-        if 'event' in args.keys() and self.submenu:
+        if not self.submenu:
+            return
+        if args.get('name', None) == 'select' or not self.submenu.element.contains(args.event.target):
             self.submenu.close()
             self.submenu.destroy()
             self.submenu = None
