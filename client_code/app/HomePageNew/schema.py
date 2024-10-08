@@ -1,12 +1,12 @@
 # Description: Application menu and permissions schema
 
 SL_MENU_ITEMS = [
-    {'id': 'dashboard_menu', 'text': 'DASHBOARD', 'items': [
+    {'id': 'dashboard_menu', 'text': 'Dashboard', 'items': [
         {'id': 'dashboard_overview', 'text': 'Overview', 'items': []},
         {'id': 'dashboard_metrics', 'text': 'Metrics', 'items': []},
         {'id': 'dashboard_notifications', 'text': 'Notifications', 'items': []},
     ]},
-    {'id': 'projects_menu', 'text': 'PROJECTS', 'items': [
+    {'id': 'projects_menu', 'text': 'Projects', 'items': [
         {'id': 'projects_leads', 'text': 'Leads', 'items': [
             {'id': 'projects_leads_new', 'text': 'New Lead', 'items': []},
             {'id': 'projects_leads_manage', 'text': 'Manage Leads', 'items': []},
@@ -24,7 +24,7 @@ SL_MENU_ITEMS = [
             {'id': 'projects_completed_reports', 'text': 'Project Reports', 'items': []},
         ]},
     ]},
-    {'id': 'scheduling_menu', 'text': 'SCHEDULING', 'items': [
+    {'id': 'scheduling_menu', 'text': 'Scheduling', 'items': [
         {'id': 'scheduling_calendar', 'text': 'Calendar', 'items': []},
         {'id': 'scheduling_staff_assignment', 'text': 'Staff Assignment', 'items': []},
         {'id': 'scheduling_gear_assignment', 'text': 'Gear Assignment', 'items': []},
