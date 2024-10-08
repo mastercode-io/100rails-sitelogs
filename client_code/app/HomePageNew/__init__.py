@@ -113,7 +113,7 @@ class HomePageNew(HomePageNewTemplate):
             appbar_menu_left_width -= anvil.js.window.document.getElementById(el).getBoundingClientRect().width
         print('appbar_menu_left_width', appbar_menu_left_width)
         appbar_menu_left_el = anvil.js.window.document.getElementById('sl-appbar-menu-left')
-        # appbar_menu_left_el.style.width = f'{appbar_menu_left_width}px'
-        appbar_menu_left_el.style.maxWidth = f'{appbar_menu_left_width}px'
+        appbar_menu_left_el.style.width = f'{appbar_menu_left_width}px'
+        # appbar_menu_left_el.style.maxWidth = f'{appbar_menu_left_width}px'
         # self.appbar_menu_left.width = appbar_menu_left_width
         self.appbar_menu_left.show()
