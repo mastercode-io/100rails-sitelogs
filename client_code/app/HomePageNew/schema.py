@@ -30,34 +30,34 @@ SL_MENU_ITEMS = [
         {'id': 'scheduling_gear_assignment', 'text': 'Gear Assignment', 'items': []},
         {'id': 'scheduling_recurring_events', 'text': 'Recurring Events', 'items': []},
     ]},
-    {'id': 'operations_menu', 'text': 'OPERATIONS', 'items': [
+    {'id': 'operations_menu', 'text': 'Operations', 'items': [
         {'id': 'operations_checklists', 'text': 'Checklists', 'items': []},
         {'id': 'operations_dockets', 'text': 'Dockets', 'items': []},
         {'id': 'operations_incident_reporting', 'text': 'Incident Reporting', 'items': []},
     ]},
-    {'id': 'timesheets_menu', 'text': 'TIMESHEETS', 'items': [
+    {'id': 'timesheets_menu', 'text': 'Timesheets', 'items': [
         {'id': 'timesheets_overview', 'text': 'Overview', 'items': []},
         {'id': 'timesheets_approval_queue', 'text': 'Approval Queue', 'items': []},
         {'id': 'timesheets_gps_verification', 'text': 'GPS Verification', 'items': []},
     ]},
-    {'id': 'invoicing_menu', 'text': 'INVOICING', 'items': [
+    {'id': 'invoicing_menu', 'text': 'Invoicing', 'items': [
         {'id': 'invoicing_create', 'text': 'Create Invoice', 'items': []},
         {'id': 'invoicing_manage', 'text': 'Manage Invoices', 'items': []},
         {'id': 'invoicing_payments', 'text': 'Payment Tracking', 'items': []},
     ]},
-    {'id': 'payroll_menu', 'text': 'PAYROLL', 'items': [
+    {'id': 'payroll_menu', 'text': 'Payroll', 'items': [
         {'id': 'payroll_dashboard', 'text': 'Dashboard', 'items': []},
         {'id': 'payroll_payruns', 'text': 'Payruns', 'items': []},
         {'id': 'payroll_payslips', 'text': 'Pay Slips', 'items': []},
         {'id': 'payroll_compliance', 'text': 'Compliance', 'items': []},
         {'id': 'payroll_reports', 'text': 'Payroll Reports', 'items': []},
     ]},
-    {'id': 'reports_menu', 'text': 'REPORTS', 'items': [
+    {'id': 'reports_menu', 'text': 'Reports', 'items': [
         {'id': 'reports_financial', 'text': 'Financial Reports', 'items': []},
         {'id': 'reports_project', 'text': 'Project Reports', 'items': []},
         {'id': 'reports_employee', 'text': 'Employee Reports', 'items': []},
     ]},
-    {'id': 'integrations_menu', 'text': 'INTEGRATIONS', 'items': [
+    {'id': 'integrations_menu', 'text': 'Integrations', 'items': [
         {'id': 'integrations_accounting', 'text': 'Accounting', 'items': [
             {'id': 'integrations_accounting_xero', 'text': 'Xero', 'items': []},
             {'id': 'integrations_accounting_quickbooks', 'text': 'QuickBooks', 'items': []},
@@ -67,13 +67,13 @@ SL_MENU_ITEMS = [
         {'id': 'integrations_document_generation', 'text': 'Document Generation', 'items': []},
         {'id': 'integrations_other_services', 'text': 'Other Services', 'items': []},
     ]},
-    {'id': 'utilities_menu', 'text': 'UTILITIES', 'items': [
+    {'id': 'utilities_menu', 'text': 'Utilities', 'items': [
         {'id': 'utilities_settings', 'text': 'Settings', 'items': []},
         {'id': 'utilities_user_management', 'text': 'User Management', 'items': []},
         {'id': 'utilities_data_import_export', 'text': 'Data Import/Export', 'items': []},
         {'id': 'utilities_document_templates', 'text': 'Document Templates', 'items': []},
     ]},
-    {'id': 'admin_menu', 'text': 'ADMIN', 'items': [
+    {'id': 'admin_menu', 'text': 'Admin', 'items': [
         {'id': 'admin_accounts', 'text': 'Accounts', 'items': []},
         {'id': 'admin_tenants', 'text': 'Tenants', 'items': []},
         {'id': 'admin_user_roles', 'text': 'User Roles', 'items': []},
@@ -85,7 +85,7 @@ SL_MENU_ITEMS = [
         ]},
         {'id': 'admin_integrations', 'text': 'Integrations', 'items': []},
     ]},
-    {'id': 'developer_menu', 'text': 'DEVELOPER', 'items': [
+    {'id': 'developer_menu', 'text': 'Developer', 'items': [
         {'id': 'developer_components', 'text': 'Components', 'items': [
             {'id': 'developer_views', 'text': 'Views', 'items': []},
             {'id': 'developer_pages', 'text': 'Pages', 'items': []},
