@@ -30,13 +30,13 @@ body {
     color: inherit !important;
     border: none;
     font-size: 14px;
+    font-weight: 600;
 }
 #sl-appbar-content .e-tbar-btn:hover,
 #sl-appbar-content .e-tbar-btn-text:hover,
 #sl-appbar-content .e-popup-down-icon:hover,
 #sl-appbar-content .e-popup-up-icon:hover {
     color: #ffffff!important;
-    font-weight: 500;
 }
 #sl-appbar-logo {
     flex: 0 0 auto;
