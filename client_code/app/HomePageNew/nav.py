@@ -131,9 +131,11 @@ class AppbarMenu:
         ]
         print('show submenu', args)
         print('event')
-        for k in args.keys():
-            print(k, args[k])
-            print('item')
+        for k in args.originalEvent.keys():
+            print(k, args.originalEvent[k])
+        print('item')
+        for k in args.item.keys():
+            print(k, args.item[k])
         # submenu = ej.navigations.ContextMenu({
         #     'items': subitems,
         #     # 'select': self.menu_select,
