@@ -142,4 +142,4 @@ class HomePageNew(HomePageNewTemplate):
         appbar_menu_left_el.style.width = f'{appbar_menu_left_width}px'
         appbar_menu_left_el.style.maxWidth = f'{appbar_menu_left_width}px'
         self.appbar_menu_left.width = appbar_menu_left_width
-        self.appbar_menu_left.show()
+        # self.appbar_menu_left.show()
