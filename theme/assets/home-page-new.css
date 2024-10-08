@@ -32,7 +32,9 @@ body {
     font-size: 14px;
 }
 #sl-appbar-content .e-tbar-btn:hover,
-#sl-appbar-content .e-tbar-btn-text:hover {
+#sl-appbar-content .e-tbar-btn-text:hover,
+#sl-appbar-content .e-popup-down-icon:hover,
+#sl-appbar-content .e-popup-up-icon:hover {
     color: #ffffff!important;
     font-weight: 500;
 }
