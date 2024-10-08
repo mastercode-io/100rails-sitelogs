@@ -68,14 +68,26 @@ class HomePageNew(HomePageNewTemplate):
             },
             {
                 'id': 'notifications',
-                'template': '<button class="e-btn e-tbar-btn"><span><i class="fa-solid fa-bell '
-                            'sl-appbar-menu-icon"></i</span></button>'
+                'prefixIcon:': 'fa-solid fa-bell',
+                # 'template': '<button class="e-btn e-tbar-btn"><span><i class="fa-solid fa-bell '
+                #             'sl-appbar-menu-icon"></i</span></button>'
             },
             {
                 'id': 'user_menu',
-                'template': '<button class="e-btn e-tbar-btn"><span><i class="fa-solid fa-user '
-                            'sl-appbar-menu-icon"></i</span></button>'
+                'prefixIcon': 'fa-solid fa-user',
+                # 'template': '<button class="e-btn e-tbar-btn"><span><i class="fa-solid fa-user '
+                #             'sl-appbar-menu-icon"></i</span></button>'
             },
+            # {
+            #     'id': 'notifications',
+            #     'template': '<button class="e-btn e-tbar-btn"><span><i class="fa-solid fa-bell '
+            #                 'sl-appbar-menu-icon"></i</span></button>'
+            # },
+            # {
+            #     'id': 'user_menu',
+            #     'template': '<button class="e-btn e-tbar-btn"><span><i class="fa-solid fa-user '
+            #                 'sl-appbar-menu-icon"></i</span></button>'
+            # },
         ]
 
         self.appbar_menu_right = nav.AppbarMenu(
