@@ -35,6 +35,9 @@ body {
 #sl-appbar-spacer {
     flex: 0 1 50px;
 }
+#sl-appbar-margin-right {
+    flex: 0 0 10px;
+}
 .sl-appbar-menu-icon {
     font-size: 18px !important;
 }
