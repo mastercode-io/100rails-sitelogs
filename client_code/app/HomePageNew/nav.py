@@ -129,13 +129,13 @@ class AppbarMenu:
             {'id': 'sub2', 'text': 'Submenu 2'},
             {'id': 'sub3', 'text': 'Submenu 3'},
         ]
-        print('show submenu', args)
-        print('event')
-        for k in args.originalEvent.keys():
-            print(k, args.originalEvent[k])
-        print('item')
-        for k in args.item.keys():
-            print(k, args.item[k])
+        # print('show submenu', args)
+        # print('event')
+        # for k in args.originalEvent.keys():
+        #     print(k, args.originalEvent[k])
+        # print('item')
+        # for k in args.item.keys():
+        #     print(k, args.item[k])
         menu_item_el = anvil.js.window.document.getElementById(args.item.id)
         rect = menu_item_el.getBoundingClientRect()
         print(menu_item_el, rect)
@@ -144,6 +144,14 @@ class AppbarMenu:
             # 'select': self.menu_select,
         }, '#sl-appbar-menu-left-submenu')
         submenu.open(rect.bottom, rect.left)
+
+        def close_on_click_outside(event):
+            if not menu_item_el.contains(event.target) and not submenu.element.contains(event.target):
+                submenu.close()
+                anvil.js.window.document.removeEventListener('click', close_on_click_outside)
+
+        # Add event listener to the document
+        anvil.js.window.document.addEventListener('click', close_on_click_outside)
 
 
     def menu_select(self, args):
