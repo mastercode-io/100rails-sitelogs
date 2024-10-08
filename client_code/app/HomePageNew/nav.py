@@ -136,11 +136,13 @@ class AppbarMenu:
         print('item')
         for k in args.item.keys():
             print(k, args.item[k])
-        # submenu = ej.navigations.ContextMenu({
-        #     'items': subitems,
-        #     # 'select': self.menu_select,
-        # }, '#sl-appbar-menu-left-submenu')
-        # submenu.open(args.event.target)
+        menu_item_el = anvil.js.window.document.getElementById(args.item.id)
+        print(menu_item_el)
+        submenu = ej.navigations.ContextMenu({
+            'items': subitems,
+            # 'select': self.menu_select,
+        }, '#sl-appbar-menu-left-submenu')
+        submenu.open(menu_item_el)
 
 
     def menu_select(self, args):
