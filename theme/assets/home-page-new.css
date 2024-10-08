@@ -22,7 +22,9 @@ body {
     align-items: center;
     padding: 4px 10px;
 }
-#sl-appbar-content .e-toolbar {
+#sl-appbar-content .e-toolbar,
+#sl-appbar-content .e-toolbar-items,
+#sl-appbar-content .e-tbar-btn {
     background-color: #005ca5!important;
     color: #a0d4ff!important;
     border: none;
@@ -35,7 +37,6 @@ body {
 }
 #sl-appbar-menu-right {
     flex: 0 0 auto;
-    background-color: #005ca5;
 }
 #sl-appbar-spacer {
     flex: 0 1 50px;
