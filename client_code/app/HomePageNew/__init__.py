@@ -103,22 +103,24 @@ class HomePageNew(HomePageNewTemplate):
             content_id=self.content_id,
             menu_items=right_menu_items,
             nav_items=schema.SL_NAV_ITEMS,
+            on_created=self.show_menu_left,
         )
 
-        print('set observer')
-        on_element_rendered('sl-appbar-menu-right', self.show_menu)
+        # print('set observer')
+        # on_element_rendered('sl-appbar-menu-right', self.show_menu)
 
 
     def form_show(self, **event_args):
         if self.firs_load:
             self.firs_load = False
+            self.appbar_menu_right.show()
 
             # print('set observer')
             # on_element_rendered('sl-appbar-menu-right', self.show_menu)
 
 
-    def show_menu(self, args):
-        self.appbar_menu_right.show()
+    def show_menu_left(self, args):
+        # self.appbar_menu_right.show()
         # time.sleep(0.5)
 
         appbar_logo_el = anvil.js.window.document.getElementById('sl-appbar-logo')

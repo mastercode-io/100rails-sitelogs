@@ -51,6 +51,7 @@ class AppbarMenu:
                  target_el=None,
                  container_id=None,
                  content_id=None,
+                 on_created=None,
                  ):
         self.app_menu = app_menu
         self.permissions = permissions
@@ -65,6 +66,7 @@ class AppbarMenu:
         self.selected_el = None
         self.nav_target_id = None
         self.content_control = None
+        self.on_created = on_created
 
         if self.menu_items is None:
             self.menu_items = self.get_user_menu_items(self.app_menu, self.permissions)
@@ -109,12 +111,11 @@ class AppbarMenu:
             self.menu = ej.navigations.Toolbar({
                 # 'cssClass': 'e-inherit pl-appbar-menu',
                 'cssClass': 'e-inherit sl-appbar-menu',
-                # 'items': self.menu_items,
                 'items': self.menu_items,
                 # 'clicked': self.menu_select,
                 'width': self.width,
                 'overflowMode': 'Popup',
-                # 'enableScrolling': True
+                'created': self.on_created,
             })
             self.menu.appendTo(jQuery(f"#{self.container_el}")[0])
 
