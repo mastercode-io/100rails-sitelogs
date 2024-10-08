@@ -158,7 +158,7 @@ class AppbarMenu:
 
     def close_submenu(self, args):
         print('close submenu')
-        if not self.submenu:
+        if self.submenu:
             self.submenu.close()
             self.submenu.destroy()
             self.submenu = None
