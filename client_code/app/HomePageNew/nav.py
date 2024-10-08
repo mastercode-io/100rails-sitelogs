@@ -152,7 +152,7 @@ class AppbarMenu:
                 self.close_submenu(None)
                 anvil.js.window.document.removeEventListener('click', close_on_click_outside)
 
-        anvil.js.window.document.addEventListener('click', close_on_click_outside)
+        # anvil.js.window.document.addEventListener('click', close_on_click_outside)
 
 
     def close_submenu(self, args):
@@ -161,7 +161,7 @@ class AppbarMenu:
             self.submenu.close()
             self.submenu.destroy()
             self.submenu = None
-            anvil.js.window.document.removeEventListener('click', self.close_submenu)
+            # anvil.js.window.document.removeEventListener('click', self.close_submenu)
 
 
     def menu_select(self, args):
