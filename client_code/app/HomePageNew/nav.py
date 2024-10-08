@@ -137,12 +137,13 @@ class AppbarMenu:
         for k in args.item.keys():
             print(k, args.item[k])
         menu_item_el = anvil.js.window.document.getElementById(args.item.id)
-        print(menu_item_el)
+        rect = menu_item_el.getBoundingClientRect()
+        print(menu_item_el, rect)
         submenu = ej.navigations.ContextMenu({
             'items': subitems,
             # 'select': self.menu_select,
         }, '#sl-appbar-menu-left-submenu')
-        submenu.open(menu_item_el)
+        submenu.open(rect.bottom, rect.left)
 
 
     def menu_select(self, args):
