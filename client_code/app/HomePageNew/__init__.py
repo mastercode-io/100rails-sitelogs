@@ -49,12 +49,15 @@ def on_element_rendered(element_id, callback):
             callback(element)
             observer_obj.disconnect()
 
+
+    print('observer', element_id, callback)
     observer = anvil.js.new(anvil.js.window.MutationObserver, observer_callback)
     # observer = mutation_observer(observer_callback)
     observer.observe(anvil.js.window.document.body, {
         'childList': True,
         'subtree': True
     })
+    print('observer', observer)
 
 
 class HomePageNew(HomePageNewTemplate):
@@ -107,6 +110,7 @@ class HomePageNew(HomePageNewTemplate):
         if self.firs_load:
             self.firs_load = False
 
+            print('set observer')
             on_element_rendered('sl-appbar-menu-right', self.show_menu)
 
 
