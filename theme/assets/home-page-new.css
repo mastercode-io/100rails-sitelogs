@@ -12,16 +12,19 @@ body {
 #sl-appbar {
     background-color: #005ca5;
     color: #a0d4ff;
-    flex-shrink: 0; /* Prevents the header from shrinking */
+    flex-shrink: 0;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Adjust as needed */
+    z-index: 1000;
 }
 #sl-appbar-content {
     display: flex;
-    /*justify-content: center;*/
     align-items: center;
     padding: 4px 10px;
+}
+#sl-appbar-content .e-toolbar-items {
+    background-color: #005ca5;
+    color: #a0d4ff;
 }
 #sl-appbar-logo {
     flex: 0 0 auto;
