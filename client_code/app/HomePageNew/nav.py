@@ -142,25 +142,29 @@ class AppbarMenu:
         print(menu_item_el, rect)
         self.submenu = ej.navigations.ContextMenu({
             'items': subitems,
-            'select': self.menu_select,
+            'select': self.close_submenu,
         }, '#sl-appbar-menu-left-submenu')
         self.submenu.open(rect.bottom, rect.left)
 
         def close_on_click_outside(event):
             print('close on click outside', event.target)
             if not menu_item_el.contains(event.target) and not self.submenu.element.contains(event.target):
-                self.close_submenu()
+                # self.close_submenu()
                 anvil.js.window.document.removeEventListener('click', close_on_click_outside)
 
         # Add event listener to the document
-        anvil.js.window.document.addEventListener('click', close_on_click_outside)
+        anvil.js.window.document.addEventListener('click', self.close_submenu)
 
 
-    def close_submenu(self):
+    def close_submenu(self, args):
+        print('close submenu')
+        for k in args.keys():
+            print(k, args[k])
         if self.submenu:
             self.submenu.close()
             self.submenu.destroy()
             self.submenu = None
+            anvil.js.window.document.removeEventListener('click', self.close_submenu)
 
 
     def menu_select(self, args):
