@@ -22,9 +22,10 @@ body {
     align-items: center;
     padding: 4px 10px;
 }
-#sl-appbar-content .e-toolbar .e-toolbar-items .e-tbar-btn {
-    background-color: #005ca5;
-    color: #a0d4ff;
+#sl-appbar-content .e-toolbar {
+    background-color: #005ca5!important;
+    color: #a0d4ff!important;
+    border: none;
 }
 #sl-appbar-logo {
     flex: 0 0 auto;
