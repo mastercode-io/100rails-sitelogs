@@ -129,8 +129,8 @@ class AppbarMenu:
         ]
         print('show submenu', args)
         print('event')
-        for k in args.originalEvenet.keys():
-            print(k, args.originalEvenet[k])
+        for k in args.originalEvent.keys():
+            print(k, args.originalEvent[k])
             print('item')
         for k in args.item.keys():
             print(k, args.item[k])
