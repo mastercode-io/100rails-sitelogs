@@ -31,12 +31,14 @@ body {
 }
 #sl-appbar-menu-right {
     flex: 0 0 auto;
+    background-color: #005ca5;
 }
 #sl-appbar-spacer {
     flex: 0 1 50px;
 }
 .sl-appbar-menu-icon {
     font-size: 18px !important;
+    color: #a0d4ff;
 }
 .sl-appbar-menu-icon:hover {
     cursor: pointer;
