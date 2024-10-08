@@ -107,10 +107,10 @@ class HomePageNew(HomePageNewTemplate):
         if self.firs_load:
             self.firs_load = False
 
-            on_element_rendered('sl-appbar-menu-right', self.show_menu())
+            on_element_rendered('sl-appbar-menu-right', self.show_menu)
 
 
-    def show_menu(self):
+    def show_menu(self, args):
         self.appbar_menu_right.show()
         # time.sleep(0.5)
 
