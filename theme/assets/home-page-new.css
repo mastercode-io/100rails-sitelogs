@@ -33,6 +33,7 @@ body {
 #sl-appbar-content .e-tbar-btn:hover,
 #sl-appbar-content .e-tbar-btn-text:hover {
     color: #c0e4ff!important;
+    font-weight: 500;
 }
 /*#sl-appbar-content .e-toolbar,*/
 /*#sl-appbar-content .e-toolbar-items,*/
