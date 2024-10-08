@@ -42,8 +42,6 @@ AppEnv.start_menu = "timesheet_menu"
 
 
 def on_element_rendered(element_id, callback):
-    mutation_observer = anvil.js.new(anvil.js.window.MutationObserver)
-
 
     def observer_callback(mutations, observer_obj):
         element = anvil.js.window.document.getElementById(element_id)
@@ -51,8 +49,8 @@ def on_element_rendered(element_id, callback):
             callback(element)
             observer_obj.disconnect()
 
-
-    observer = mutation_observer(observer_callback)
+    observer = anvil.js.new(anvil.js.window.MutationObserver, observer_callback)
+    # observer = mutation_observer(observer_callback)
     observer.observe(anvil.js.window.document.body, {
         'childList': True,
         'subtree': True
