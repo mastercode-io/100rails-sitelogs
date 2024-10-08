@@ -143,6 +143,7 @@ class AppbarMenu:
         self.submenu = ej.navigations.ContextMenu({
             'items': subitems,
             'select': self.close_submenu,
+            'onClose': self.close_submenu,
         }, '#sl-appbar-submenu')
         self.submenu.open(rect.bottom, rect.left)
 
