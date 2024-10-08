@@ -147,6 +147,7 @@ class AppbarMenu:
         self.submenu.open(rect.bottom, rect.left)
 
         def close_on_click_outside(event):
+            print('close on click outside', event.target)
             if not menu_item_el.contains(event.target) and not self.submenu.element.contains(event.target):
                 self.submenu.close()
                 self.submenu.destroy()
