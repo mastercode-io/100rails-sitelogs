@@ -41,24 +41,6 @@ AppEnv.theme = {
 AppEnv.start_menu = "timesheet_menu"
 
 
-def on_element_rendered(element_id, callback):
-
-    def observer_callback(mutations, observer_obj):
-        element = anvil.js.window.document.getElementById(element_id)
-        if element:
-            callback(element)
-            observer_obj.disconnect()
-
-
-    print('observer', element_id, callback)
-    observer = anvil.js.new(anvil.js.window.MutationObserver, observer_callback)
-    # observer = mutation_observer(observer_callback)
-    observer.observe(anvil.js.window.document.body, {
-        'childList': True,
-        'subtree': True
-    })
-    print('observer', observer)
-
 
 class HomePageNew(HomePageNewTemplate):
     def __init__(self, **props):
@@ -106,39 +88,31 @@ class HomePageNew(HomePageNewTemplate):
             on_created=self.show_menu_left,
         )
 
-        # print('set observer')
-        # on_element_rendered('sl-appbar-menu-right', self.show_menu)
-
 
     def form_show(self, **event_args):
         if self.firs_load:
             self.firs_load = False
             self.appbar_menu_right.show()
 
-            # print('set observer')
-            # on_element_rendered('sl-appbar-menu-right', self.show_menu)
-
 
     def show_menu_left(self, args):
-        # self.appbar_menu_right.show()
         time.sleep(1)
-
-        appbar_logo_el = anvil.js.window.document.getElementById('sl-appbar-logo')
-        appbar_spacer_el = anvil.js.window.document.getElementById('sl-appbar-spacer')
-        appbar_menu_right_el = anvil.js.window.document.getElementById('sl-appbar-menu-right')
-        appbar_logo_el_width = appbar_logo_el.getBoundingClientRect().width
-        appbar_spacer_el_width = appbar_spacer_el.getBoundingClientRect().width
-        appbar_menu_right_el_width = appbar_menu_right_el.getBoundingClientRect().width
-        print('appbar_logo_el', appbar_logo_el_width)
-        print('appbar_spacer_el', appbar_spacer_el_width)
-        print('appbar_menu_right_el', appbar_menu_right_el_width)
-        appbar_menu_left_width = (anvil.js.window.innerWidth - appbar_logo_el_width - appbar_menu_right_el_width
-                                  - appbar_spacer_el_width)
+        # appbar_logo_el = anvil.js.window.document.getElementById('sl-appbar-logo')
+        # appbar_spacer_el = anvil.js.window.document.getElementById('sl-appbar-spacer')
+        # appbar_menu_right_el = anvil.js.window.document.getElementById('sl-appbar-menu-right')
+        # appbar_logo_el_width = appbar_logo_el.getBoundingClientRect().width
+        # appbar_spacer_el_width = appbar_spacer_el.getBoundingClientRect().width
+        # appbar_menu_right_el_width = appbar_menu_right_el.getBoundingClientRect().width
+        # print('appbar_logo_el', appbar_logo_el_width)
+        # print('appbar_spacer_el', appbar_spacer_el_width)
+        # print('appbar_menu_right_el', appbar_menu_right_el_width)
+        # appbar_menu_left_width = (anvil.js.window.innerWidth - appbar_logo_el_width - appbar_menu_right_el_width
+        #                           - appbar_spacer_el_width)
+        appbar_menu_left_width = anvil.js.window.innerWidth
+        for el in ('sl-appbar-logo', 'sl-appbar-spacer', 'sl-appbar-menu-right'):
+            appbar_menu_left_width -= anvil.js.window.document.getElementById(el).getBoundingClientRect().width
         print('appbar_menu_left_width', appbar_menu_left_width)
         appbar_menu_left_el = anvil.js.window.document.getElementById('sl-appbar-menu-left')
-        print('appbar_menu_left_el', appbar_menu_left_el.getBoundingClientRect().width)
-        print('appbar_menu_left_el', appbar_menu_left_el.offsetWidth)
-        print('appbar_menu_left_el', appbar_menu_left_el.clientWidth)
         appbar_menu_left_el.style.width = f'{appbar_menu_left_width}px'
         appbar_menu_left_el.style.maxWidth = f'{appbar_menu_left_width}px'
         self.appbar_menu_left.width = appbar_menu_left_width
