@@ -162,6 +162,7 @@ class AppbarMenu:
             # self.submenu.close()
             self.submenu.destroy()
             self.submenu = None
+            anvil.js.window.document.getElementById('sl-appbar-submenu').style.display = 'none'
             # anvil.js.window.document.removeEventListener('click', self.close_submenu)
 
 
