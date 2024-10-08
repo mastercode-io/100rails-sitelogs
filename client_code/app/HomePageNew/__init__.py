@@ -105,13 +105,16 @@ class HomePageNew(HomePageNewTemplate):
             nav_items=schema.SL_NAV_ITEMS,
         )
 
+        print('set observer')
+        on_element_rendered('sl-appbar-menu-right', self.show_menu)
+
 
     def form_show(self, **event_args):
         if self.firs_load:
             self.firs_load = False
 
-            print('set observer')
-            on_element_rendered('sl-appbar-menu-right', self.show_menu)
+            # print('set observer')
+            # on_element_rendered('sl-appbar-menu-right', self.show_menu)
 
 
     def show_menu(self, args):
