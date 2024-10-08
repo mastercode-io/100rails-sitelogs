@@ -159,7 +159,7 @@ class AppbarMenu:
     def close_submenu(self, args):
         print('close submenu')
         if self.submenu:
-            self.submenu.close()
+            # self.submenu.close()
             self.submenu.destroy()
             self.submenu = None
             # anvil.js.window.document.removeEventListener('click', self.close_submenu)
