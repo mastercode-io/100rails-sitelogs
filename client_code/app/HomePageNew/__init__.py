@@ -69,6 +69,9 @@ class HomePageNew(HomePageNewTemplate):
             })
         }
         schema.SL_MENU_ITEMS.append(dropdown_item)
+        schema.SL_MENU_ITEMS.append(dropdown_item)
+        schema.SL_MENU_ITEMS.append(dropdown_item)
+        schema.SL_MENU_ITEMS.append(dropdown_item)
         self.appbar_menu_left = nav.AppbarMenu(
             container_el="sl-appbar-menu-left",
             target_el=".sl-page-container",
