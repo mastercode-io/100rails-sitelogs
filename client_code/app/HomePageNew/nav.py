@@ -71,8 +71,8 @@ class AppbarMenu:
 
         if self.menu_items is None:
             self.menu_items = self.get_user_menu_items(self.app_menu, self.permissions)
-        for item in self.menu_items:
-            item['click'] = self.show_submenu
+        # for item in self.menu_items:
+        #     item['click'] = self.show_submenu
 
 
     @staticmethod
