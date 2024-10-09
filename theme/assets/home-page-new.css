@@ -42,7 +42,7 @@ body {
 #sl-appbar-content .e-tbar-btn-text:focus,
 #sl-appbar-content .e-popup-down-icon:focus,
 #sl-appbar-content .e-popup-up-icon:focus {
-    color: red!important;
+    color: #ffffff!important;
 }
 #sl-appbar-logo {
     flex: 0 0 auto;
