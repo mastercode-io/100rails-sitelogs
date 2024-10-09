@@ -44,7 +44,7 @@ body {
 #sl-appbar-content .e-popup-up-icon:focus {
     color: #ffffff!important;
     background-color: #4641DB!important;
-    border-color: #4641DB!important;
+    border: none;
 }
 #sl-appbar-logo {
     flex: 0 0 auto;
