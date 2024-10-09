@@ -64,7 +64,7 @@ class HomePageNew(HomePageNewTemplate):
                     {'text': 'Item 3'},
                 ],
                 'content': 'Dropdown',
-                'select': self.menu_select,
+                # 'select': self.menu_select,
                 # 'created': self.menu_created,
             })
         }
