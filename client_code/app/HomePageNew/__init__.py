@@ -68,6 +68,12 @@ class HomePageNew(HomePageNewTemplate):
                 # 'created': self.menu_created,
             })
         }
+        dropdown_menu = [
+            dropdown_item,
+            dropdown_item,
+            dropdown_item,
+            dropdown_item,
+        ]
         schema.SL_MENU_ITEMS.append(dropdown_item)
         schema.SL_MENU_ITEMS.append(dropdown_item)
         schema.SL_MENU_ITEMS.append(dropdown_item)
@@ -76,7 +82,8 @@ class HomePageNew(HomePageNewTemplate):
             container_el="sl-appbar-menu-left",
             target_el=".sl-page-container",
             content_id=self.content_id,
-            menu_items=schema.SL_MENU_ITEMS,
+            # menu_items=schema.SL_MENU_ITEMS,
+            menu_items=dropdown_menu,
             nav_items=schema.SL_NAV_ITEMS,
         )
 
