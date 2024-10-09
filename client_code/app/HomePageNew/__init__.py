@@ -53,6 +53,22 @@ class HomePageNew(HomePageNewTemplate):
         self.start_page = props.get('start_page', None)
         self.start_props = props.get('start_props', {})
 
+        dropdown_item = {
+            'id': 'dropdown',
+            'type': 'Input',
+            'text': 'Dropdown',
+            'template': ej.splitbuttons.DropDownButton({
+                'items': [
+                    {'text': 'Item 1'},
+                    {'text': 'Item 2'},
+                    {'text': 'Item 3'},
+                ],
+                'content': 'Dropdown',
+                'select': self.menu_select,
+                # 'created': self.menu_created,
+            })
+        }
+        schema.SL_MENU_ITEMS.append(dropdown_item)
         self.appbar_menu_left = nav.AppbarMenu(
             container_el="sl-appbar-menu-left",
             target_el=".sl-page-container",
